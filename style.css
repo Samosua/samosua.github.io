@@ -6,9 +6,9 @@
 body {
  width: 100%;
  height: 100%;
- color:#333;
- background: url(images/body.png) 0px 0px repeat;
- font-family: "Segoe UI", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ /* color:#333; */
+ /* background: url(images/body.png) 0px 0px repeat; */
+ font-family: /*"Segoe UI", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",*/ Arial, Helvetica, sans-serif;
  font-size:0.94em;
  line-height:135%;
 }
@@ -17,9 +17,9 @@ h1 {
  text-align:center;
  font-size:60px;
  font-weight:normal;
- padding:0px 0 0px;
+ padding:25px 0 0 0;
  line-height:100%;
- font-style:Arial;
+ /* font-style:Arial; */
 }
  
 a {
@@ -32,12 +32,9 @@ a:hover {
  text-decoration: none;
 }
  
-/* -------------------------------
- Структура
- ----------------------------------*/
  
 /* -------------------------------
- Ширина сайта в 1000px
+ Ширина сайту в 1000px
  ----------------------------------*/
  
 #wrapper {
@@ -50,42 +47,22 @@ a:hover {
 }
  
 /* -------------------------------
- Шапка сайта
- ----------------------------------*/
- /*
-#headerInner {
- border: 0px solid #000;
- background: #d04942;
- position:relative;
- width:100%;
- max-width:1000px;
- height:100px;
- margin:0 auto;
- margin-top:0px;
-}
- 
-.text {
- margin:15px;
- 
-} */
- 
-/* -------------------------------
  Главный контент
  ----------------------------------*/
- 
+/* 
 #content #colLeft {
  
-border: 0px solid #000;
+ border: 0px solid #000;
  float:left;
  width:67%;
  margin-right:0px;
- background: #85c9cf;
-}
- 
+ background: #85c9cf; 
+} */
+
 /* -------------------------------
  Сайтбар сайта
  ----------------------------------*/
- 
+/* 
 #content #colRight {
  position:relative;
  margin-left:30px;
@@ -102,7 +79,7 @@ border: 0px solid #000;
  visibility: hidden;
  height: 0;
 }
- 
+ */
 /*----------------------------
  Логотип
  ------------------------------*/
