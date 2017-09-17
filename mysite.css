@@ -1,126 +1,43 @@
 * {
  margin: 0;
  padding: 0;
-}
+} 
  
 body {
  width: 100%;
  height: 100%;
  color:#333;
- /* background: url(images/body.png) 0px 0px repeat; */
  font-family: Arial, sans-serif;
  font-size:0.94em;
  line-height:135%;
 }
  
 h1 {
- font-size:50px;
+ font-size:70px;
  font-weight:normal;
- padding:0px 0 0px;
+ text-align:center;
+ padding:25px 0 0 0px;
  line-height:100%;
 }
  
 a {
- color: #cd5252;
+ color: #ffffff;
  text-decoration:none;
 }
  
 a:hover {
- color:#963c3c;
+ color:#ffffff;
  text-decoration: none;
 }
- 
 /* -------------------------------
- Структура
+ Підвал сайту
  ----------------------------------*/
  
-/* -------------------------------
- Ширина сайта в 1000px
- ----------------------------------*/
- 
-#wrapper {
- margin-top:40px;
- border:0px solid #000;
- width: 100%;
- max-width:1000px;
- margin: 0 auto;
- height: auto !important;
-}
- 
-/* -------------------------------
- Шапка сайта
- ----------------------------------*/
- 
-#headerInner {
- border: 0px solid #000;
- background: #d04942;
- position:relative;
- width:100%;
- max-width:1000px;
- height:100px;
- margin:0 auto;
- margin-top:0px;
-}
- 
-.text {
- margin:15px;
- 
-}
- 
-/* -------------------------------
- Главный контент
- ----------------------------------*/
- 
-#content #colLeft {
- 
-border: 0px solid #000;
- float:left;
- width:67%;
- margin-right:0px;
- background: #85c9cf;
-}
- 
-/* -------------------------------
- Сайтбар сайта
- ----------------------------------*/
- 
-#content #colRight {
- position:relative;
- margin-left:30px;
- float:left;
- width:30%;
- border: 0px solid #1FA2E1;
- background: #7a9e0e;
-}
- 
-#middle:after {
- content: '.';
- display: block;
- clear: both;
- visibility: hidden;
- height: 0;
-}
- 
-/*----------------------------
- Логотип
- ------------------------------*/
- 
-.logo {
- position:absolute;
- left:0px;
- top:40px;
-}
- 
-.logo a {
- margin-left:30px;
- font-size:30px;
- color:#96b551;
-}
-   #footer {
-    position: fixed; /* Фиксированное положение */
-    left: 0; bottom: 0; /* Левый нижний угол */
-    padding: 0px; /* Поля вокруг текста */
-    background: #; /* Цвет фона */
-    color: #000; /* Цвет текста */
-    width: 100%; /* Ширина слоя */
+    #footer {
+    position: fixed; /* Фіксоване положення */
+    left: 0; bottom: 0; /* Лівий нижній кут */
+    padding: 0px; /* Поля навколо тексту */
+    /* background: #;  Колір фону */
+    color: #000; /* Колір тексту */
+    width: 100%; /* Ширина шару */
      }
