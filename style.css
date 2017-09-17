@@ -2,37 +2,126 @@
  margin: 0;
  padding: 0;
 } 
+ 
 body {
- width: 100%; /* Ширина сторінки */
- height: 100%; /* Висота сторінки */
+ width: 100%;
+ height: 100%;
+ color:#333;
  font-family: Arial, sans-serif;
  font-size:0.94em;
  line-height:135%;
 }
+ 
 h1 {
  font-size:70px;
  font-weight:normal;
  text-align:center;
- padding:25px 0 0 0;
+ padding:25px 0 0 0px;
  line-height:100%;
 }
+ 
 a {
  color: #ffffff; /* Колір посилання */
  text-decoration:none; /* Виключення підкреслення */
 }
+ 
 a:hover {
  color:#ffffff; /* Колір відвіданого посилання */
  text-decoration: none; /* Виключення підкреслення */
 }
+ 
+/* -------------------------------
+ Структура
+ ----------------------------------*/
+ 
+/* -------------------------------
+ Ширина сайту в 1000px
+ ----------------------------------*/
+
+#wrapper {
+ margin-top:40px;
+ border:0px solid #000;
+ width: 100%;
+ max-width:1000px;
+ margin: 0 auto;
+ height: auto !important;
+}
+
+/* -------------------------------
+ Шапка сайту
+ ----------------------------------*/
+
+#headerInner {
+ border: 0px solid #000;
+ background: #d04942;
+ position:relative;
+ width:100%;
+ max-width:1000px;
+ height:100px;
+ margin:0 auto;
+ margin-top:0px;
+}
+ 
+.text {
+ margin:15px;
+}
+
+/* -------------------------------
+ Головний контент
+ ----------------------------------*/
+
+#content #colLeft {
+border: 0px solid #000;
+ float:left;
+ width:67%;
+ margin-right:0px;
+ /* background: #85c9cf; */
+}
+
 /* -------------------------------
  Підвал сайту
  ----------------------------------*/
+#footer {
+ position: fixed; /* Фіксоване положення */
+ left: 0; bottom: 0; /* Лівий нижній кут */
+ padding: 0px; /* Поля навколо тексту */
+ background: #; /* Колір фону */
+ color: #fff; /* Колір тексту */
+ width: 100%; /* Ширина шару */
+  }
+/* -------------------------------
+ Сайтбар сайту
+ ----------------------------------*/
+
+#content #colRight {
+ position:relative;
+ margin-left:30px;
+ float:left;
+ width:30%;
+ border: 0px solid #1FA2E1;
+ background: #7a9e0e;
+}
  
-    #footer {
-    text-align:center; /* Положення тексту в центрі */
-    position: fixed; /* Фіксоване положення */
-    left: 0; bottom: 0; /* Лівий нижній кут */
-    padding: 0px; /* Поля навколо тексту */
-    color: #000; /* Колір тексту */
-    width: 100%; /* Ширина шару */
-     }
+#middle:after {
+ content: '.';
+ display: block;
+ clear: both;
+ visibility: hidden;
+ height: 0;
+}
+
+/*----------------------------
+ Логотип
+ ------------------------------*/
+
+.logo {
+ position:absolute;
+ left:0px;
+ top:40px;
+}
+ 
+.logo a {
+ margin-left:30px;
+ font-size:30px;
+ color:#96b551;
+}
