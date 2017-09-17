@@ -14,20 +14,21 @@ body {
 }
  
 h1 {
- font-size:30px;
+ text-align:center;
+ font-size:60px;
  font-weight:normal;
  padding:0px 0 0px;
  line-height:100%;
- font-style:italic;
+ font-style:Arial;
 }
  
 a {
- color: #cd5252;
+ color: #fff;
  text-decoration:none;
 }
  
 a:hover {
- color:#963c3c;
+ color:#fff;
  text-decoration: none;
 }
  
@@ -51,7 +52,7 @@ a:hover {
 /* -------------------------------
  Шапка сайта
  ----------------------------------*/
- 
+ /*
 #headerInner {
  border: 0px solid #000;
  background: #d04942;
@@ -66,7 +67,7 @@ a:hover {
 .text {
  margin:15px;
  
-}
+} */
  
 /* -------------------------------
  Главный контент
@@ -105,7 +106,7 @@ border: 0px solid #000;
 /*----------------------------
  Логотип
  ------------------------------*/
- 
+/*
 .logo {
  position:absolute;
  left:0px;
@@ -116,4 +117,17 @@ border: 0px solid #000;
  margin-left:30px;
  font-size:30px;
  color:#96b551;
-}
+} */
+/*----------------------------
+Підвал сайту
+------------------------------*/
+
+#footer {
+ text-align:center;
+ position: fixed; /* Фиксированное положение */
+ left: 0; bottom: 0; /* Левый нижний угол */
+ padding: 0px; /* Поля вокруг текста */
+ /*background: #;  Цвет фона */
+ color: #fff; /* Цвет текста */
+ width: 100%; /* Ширина слоя */
+  }
