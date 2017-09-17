@@ -33,7 +33,7 @@ a:hover {
 /* -------------------------------
  Ширина сайту в 1000px
  ----------------------------------*/
- 
+/* 
 #wrapper {
  margin-top:40px;
  border:0px solid #000;
@@ -41,7 +41,7 @@ a:hover {
  max-width:1000px;
  margin: 0 auto;
  height: auto !important;
-}
+} */
 
 #footer {
  text-align:center;
