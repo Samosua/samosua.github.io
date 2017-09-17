@@ -2,42 +2,37 @@
  margin: 0;
  padding: 0;
 } 
- 
 body {
- width: 100%;
- height: 100%;
- color:#333;
+ width: 100%; /* Ширина сторінки */
+ height: 100%; /* Висота сторінки */
  font-family: Arial, sans-serif;
  font-size:0.94em;
  line-height:135%;
 }
- 
 h1 {
  font-size:70px;
  font-weight:normal;
  text-align:center;
- padding:25px 0 0 0px;
+ padding:25px 0 0 0;
  line-height:100%;
 }
- 
 a {
- color: #ffffff;
- text-decoration:none;
+ color: #ffffff; /* Колір посилання */
+ text-decoration:none; /* Виключення підкреслення */
 }
- 
 a:hover {
- color:#ffffff;
- text-decoration: none;
+ color:#ffffff; /* Колір відвіданого посилання */
+ text-decoration: none; /* Виключення підкреслення */
 }
 /* -------------------------------
  Підвал сайту
  ----------------------------------*/
  
     #footer {
+    text-align:center; /* Положення тексту в центрі */
     position: fixed; /* Фіксоване положення */
     left: 0; bottom: 0; /* Лівий нижній кут */
     padding: 0px; /* Поля навколо тексту */
-    /* background: #;  Колір фону */
     color: #000; /* Колір тексту */
     width: 100%; /* Ширина шару */
      }
