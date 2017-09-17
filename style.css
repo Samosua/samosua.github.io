@@ -1,33 +1,34 @@
 * {
  margin: 0;
  padding: 0;
-} 
+}
  
 body {
  width: 100%;
  height: 100%;
  color:#333;
- font-family: Arial, sans-serif;
+ background: url(images/body.png) 0px 0px repeat;
+ font-family: "Segoe UI", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
  font-size:0.94em;
  line-height:135%;
 }
  
 h1 {
- font-size:70px;
+ font-size:30px;
  font-weight:normal;
- text-align:center;
- padding:25px 0 0 0px;
+ padding:0px 0 0px;
  line-height:100%;
+ font-style:italic;
 }
  
 a {
- color: #ffffff; /* Колір посилання */
- text-decoration:none; /* Виключення підкреслення */
+ color: #cd5252;
+ text-decoration:none;
 }
  
 a:hover {
- color:#ffffff; /* Колір відвіданого посилання */
- text-decoration: none; /* Виключення підкреслення */
+ color:#963c3c;
+ text-decoration: none;
 }
  
 /* -------------------------------
@@ -35,9 +36,9 @@ a:hover {
  ----------------------------------*/
  
 /* -------------------------------
- Ширина сайту в 1000px
+ Ширина сайта в 1000px
  ----------------------------------*/
-
+ 
 #wrapper {
  margin-top:40px;
  border:0px solid #000;
@@ -46,11 +47,11 @@ a:hover {
  margin: 0 auto;
  height: auto !important;
 }
-
+ 
 /* -------------------------------
- Шапка сайту
+ Шапка сайта
  ----------------------------------*/
-
+ 
 #headerInner {
  border: 0px solid #000;
  background: #d04942;
@@ -64,35 +65,26 @@ a:hover {
  
 .text {
  margin:15px;
+ 
 }
-
+ 
 /* -------------------------------
- Головний контент
+ Главный контент
  ----------------------------------*/
-
+ 
 #content #colLeft {
+ 
 border: 0px solid #000;
  float:left;
  width:67%;
  margin-right:0px;
- /* background: #85c9cf; */
+ background: #85c9cf;
 }
-
+ 
 /* -------------------------------
- Підвал сайту
+ Сайтбар сайта
  ----------------------------------*/
-#footer {
- position: fixed; /* Фіксоване положення */
- left: 0; bottom: 0; /* Лівий нижній кут */
- padding: 0px; /* Поля навколо тексту */
- background: #; /* Колір фону */
- color: #fff; /* Колір тексту */
- width: 100%; /* Ширина шару */
-  }
-/* -------------------------------
- Сайтбар сайту
- ----------------------------------*/
-
+ 
 #content #colRight {
  position:relative;
  margin-left:30px;
@@ -109,11 +101,11 @@ border: 0px solid #000;
  visibility: hidden;
  height: 0;
 }
-
+ 
 /*----------------------------
  Логотип
  ------------------------------*/
-
+ 
 .logo {
  position:absolute;
  left:0px;
