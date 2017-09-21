@@ -1,44 +1,44 @@
 * {
- margin: 0;
- padding: 0;
+ margin: 0; /* Відступи ззовні */
+ padding: 0; /* Відступи в середині */
 }
- 
-body {
- width: 100%;
- height: 100%;
- font-family: Arial, Helvetica, sans-serif;
- font-size:0.94em;
- line-height:135%;
+
+body { /* Тіло сторінки */
+ width: 100%; /* Висота */
+ height: 100%; /* Ширина */
+ font-family: Arial, Helvetica, sans-serif; /* Шрифти */
+ font-size:0.94em; /* Розмір тексту */
+ line-height:135%; /* Міжрядковий інтервал */
 }
- 
-h1 {
- text-align:center;
- font-size:60px;
- font-weight:normal;
- padding:25px 0 0 0;
- line-height:100%;
+
+h1 { /* Заголовок 1 */
+ text-align:center; /* Вирівнювання по центру */
+ font-size:60px; /* Розмір тексту */
+ font-weight:normal; /* Висота тексту */
+ padding:25px 0 0 0; /* Відступи від краю */
+ line-height:100%; /* Міжрядковий інтервал */
 }
- 
-a {
+
+a { /* Посилання */
  color: #fff; /* Колір посилання */
  text-decoration:none; /* Відміна підкреслення */
 }
- 
-a:hover {
+
+a:hover { /* Посилання відвідане */
  color:#fff; /* Колір посилання */
  text-decoration: none; /* Відміна підкреслення */
 }
 
-#cost {
+#cost { /* Текст вартості */
  text-align:center; /* Вирівнювання тексту по середині */
  position: fixed; /* Фіксоване положення */
  padding: 0 0 25px 0; /* Поля навколо тексту */
  color: #fff; /* Колір тексту */
- font-size: 18px;
+ font-size: 18px; /* Розмір тексту */
  width: 100%; /* Ширина шару */
 }
 
-#footer {
+#footer { /* Підвал */
  text-align:center; /* Вирівнювання тексту по середині */
  position: fixed; /* Фіксоване положення */
  left: 0; bottom: 0; /* Лівий нижній кут */
