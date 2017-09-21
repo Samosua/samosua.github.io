@@ -29,6 +29,15 @@ a:hover {
  text-decoration: none; /* Відміна підкреслення */
 }
 
+#cost {
+ text-align:center; /* Вирівнювання тексту по середині */
+ position: fixed; /* Фіксоване положення */
+ padding: 0 0 25px 0; /* Поля навколо тексту */
+ color: #fff; /* Колір тексту */
+ font-size: 18px;
+ width: 100%; /* Ширина шару */
+}
+
 #footer {
  text-align:center; /* Вирівнювання тексту по середині */
  position: fixed; /* Фіксоване положення */
