@@ -67,8 +67,8 @@ display:block;
  
 .modal{
 	 /* z-index:3; */
-	 display:none;
-	 padding-top:80px;
+	 display:none; /* Приховування модалу при завантаженні сторінки */
+	 padding-top:30px;
 	 position:fixed;
 	 /* left:0; */
 	 top:0;
@@ -83,8 +83,9 @@ display:block;
 	margin:auto;
 	background-color:#fff;
 	position:relative;
-	padding:0;
+	/* padding:0; */
 	outline:0;
-	width:600px;
-	margin:0 10px;width:auto!important;
+	width:200px;
+	/* margin:50px 50px 100px 50px;
+	width:auto!important; */
 	}
