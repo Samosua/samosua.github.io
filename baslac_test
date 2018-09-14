@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Color-Online</title>
+
+        <script language="JavaScript" type="text/javascript">
+
+                var nbases = 5 ;
+                var bname = [ "LE81", "LE54", "M974", "M6", "M26" ] ;
+                var de = [ 1.637, .987, 1.006, 1.131, 1.008];
+                var mcoef1l = [ 1067.6064416456, 71.173762776371, 175.08745642987, 65.479861754261, 44.12773292135 ] ;
+                var mcoef1lcum = [ 1067.6064416456, 1138.7802044219, 1313.8676608518, 1379.3475226061, 1423.4752555274 ] ;
+                var mcoef1kg = [ 750, 50, 123, 46, 31 ] ;
+                var mcoef1kgcum = [ 750, 800, 923, 969, 1000 ] ;
+                var dens = 1.4234752555274;
+
+                var warnLimit = 0.15 ;  // Warn limit for low target volume (ltr / kg)
+                var warnText = "Вибрана маленька кількість. Точність суміші може бути порушена!";
+                var estimateText = "Вказана кількість є тільки оцінкою необхідної кількості фарби. Кіл-ть може залежати від наповнювача, кольору, методу нанесення та інше.";
+
+                /*
+				var V = new Array( 0.14, 0.14, 0.17 );
+                var H = new Array( 0.23, 0.31, 0.38 );
+                var CC= new Array( 1.99, 2.39, 2.52 );
+				*/
+
+                /*
+                 *      Calculate new amounts and set in table-fields (using id)
+                */
+                function calcAmounts()  {
+
+                        var val1, val2, val1str, val2str, dummy;
+
+                        // perform rounding 
+                        document.frm1.targname.value = Math.round(document.frm1.targname.value * 100)/100;
+
+                        // Check targ value
+                        if ( document.frm1.targname.value < 0.0 )  {
+                                document.frm1.targname.value = (document.frm1.targname.value)*(-1.0);
+                        }
+
+                        checkWarnLimit();
+
+                        if ( document.frm1.targname.value == 0 )  {
+                                document.frm1.targname.value = warnLimit ;
+                        }
+
+                        for ( i=0; i< nbases; i++) {
+                                if ( document.m5prntfrm.unit.value == 'ltr') {
+                                        val1 = Math.round(mcoef1l[i]*document.frm1.targname.value*10 )/10 ;
+                                }
+                                else {
+                                        val1 = Math.round(mcoef1kg[i]*document.frm1.targname.value*10 )/10 ;
+                                }
+                                val1str = " " + val1;
+                                if (val1str.indexOf(".") < 0) {
+                                        val1str=val1str + ".0";
+                                }
+                                dummy = document.getElementById('B_'+bname[i]);
+                                dummy.innerHTML="<b>" + val1str + "<\/b>";
+
+                                if ( document.m5prntfrm.unit.value == 'ltr') {
+                                        val2 = Math.round(mcoef1lcum[i]*document.frm1.targname.value*10 )/10 ;
+                                }
+                                else {
+                                        val2 = Math.round(mcoef1kgcum[i]*document.frm1.targname.value*10 )/10 ;
+                                }
+                                val2str = " " + val2;
+                                if (val2str.indexOf(".") < 0) {
+                                        val2str=val2str + ".0";
+                                }
+                                dummy = document.getElementById('BC_'+bname[i]);
+                                dummy.innerHTML="<b>" + val2str + "<\/b>";
+
+                        }       // end for
+                }       /* end calcAmounts() */
+
+
+                /*
+                 * Calculate Volume, carparts or complete, small/medium/big
+                 */
+                function calcVol() {
+
+                  var i;
+                  var horiz=0,vert=0;
+                  var valor;
+                  var indice=document.frm_model.smb_idx.value;
+
+                  document.frm1.unit[0].checked = true ;
+                  document.m5prntfrm.unit.value = 'ltr' ;
+
+                  if (!document.frm_model.COMPLETE.checked)  {
+
+                    for (i=1;i<=10;i++) {
+                        if (eval("document.frm_model.V"+i+".checked")) vert++;
+                        }
+
+                    for (i=1;i<=3;i++) {
+                      if (eval("document.frm_model.H"+i+".checked")) horiz++;
+                    }
+
+                    if (vert+horiz == 0)  {
+                      estimateWarning(0);
+                      return ;
+                    } else {
+                      estimateWarning(1);
+                    }
+
+                    if (vert+horiz==13)  {
+                      document.frm_model.COMPLETE.checked=1;
+                      calcCompleteVehicle();
+                    }
+                    else  {
+                      valor=(V[indice-1]*vert)+H[indice-1]*horiz;
+                      setTargetAndCalculate(valor);
+                     }
+                   }
+
+                   else {
+                     calcCompleteVehicle();
+                   }
+
+                 }
+                        /*
+                         * Set target + component values
+                         */
+                        function setTargetAndCalculate(p_amount)        {
+                          eval("document.frm1.targname.value="+p_amount);
+                          document.frm1.src_amount.value=document.frm1.targname.value;
+                          calcAmounts();
+                        }       /* function setTargetAndCalculate(number) */
+
+                        function saveandcalc() {
+                          document.frm1.src_amount.value=document.frm1.targname.value;
+                          calcAmounts();
+                          $("#adjust_quantity").slider( "option", "value", 1);
+                          return(false);
+                        }
+
+                        /*
+                         * Calculate for complete vehicle
+                         */
+                        function calcCompleteVehicle(){
+
+                          var i = 0;
+                          var val=0;
+                          var idx=document.frm_model.smb_idx.value;     // small/med/big
+                          val=CC[idx-1];
+                          for (i=1;i<=10;i++) { eval("document.frm_model.V"+i+".checked=0");  }
+                          for (i=1;i<=3;i++) {  eval("document.frm_model.H"+i+".checked=0");   }
+
+                          if (document.frm_model.COMPLETE.checked) {
+                            estimateWarning(1);
+                          } else {
+                            estimateWarning(0);
+                          }
+                          setTargetAndCalculate(val);
+
+                        }
+
+                        function prntClicked() {
+                          dcsMultiTrack(
+                            'DCS.dcssip','coloronline.glasurit.com',
+                            'DCS.dcsuri','/m5print.php',
+                            'WT.z_event','print',
+                            'WT.z_Mfr', document.webtrends.mfr.value,
+                            'WT.z_ColorCode', document.webtrends.colorcode.value,
+                            'WT.z_ColorName', document.webtrends.colorname.value,
+                            'WT.z_StdNo', document.webtrends.stdno.value,
+                            'WT.z_Dev', document.webtrends.deviation.value,
+                            'WT.z_FYear', document.webtrends.firstyear.value,
+                            'WT.z_LYear', document.webtrends.lastyear.value,
+                            'WT.z_PaintLine', document.webtrends.ptl.value,
+                            'WT.z_FormDate', document.webtrends.form_date.value,
+                            'WT.dl', '99');
+
+                          var cmnd = 'm5print.php?col_code='+document.m5prntfrm.col_code.value;
+                          cmnd = cmnd + '&col_node=' + document.m5prntfrm.col_node.value ;
+                          cmnd = cmnd + '&sol_code=' + document.m5prntfrm.sol_code.value ;
+                          cmnd = cmnd + '&sol_node=' + document.m5prntfrm.sol_node.value ;
+                          cmnd = cmnd + '&cop_code=' + document.m5prntfrm.cop_code.value ;
+                          cmnd = cmnd + '&cop_node=' + document.m5prntfrm.cop_node.value ;
+                          cmnd = cmnd + '&unit=' + document.m5prntfrm.unit.value ;
+                          cmnd = cmnd + '&amount=' + document.frm1.targname.value ;
+                          cmnd = cmnd + '&action=' + document.m5prntfrm.action.value ;
+                          cmnd = cmnd + '&calcGloss=' + document.m5prntfrm.calcGloss.value ;
+                          // alert ('cmnd=' + cmnd);
+                          var F1 = window.open(cmnd,"PrintFormula", "width=510,height=600,resizable=yes,scrollbars=yes");
+                        }
+
+                        function expClicked() {
+                          document.exp.unit.value = document.m5prntfrm.unit.value;
+                          document.exp.amount.value = document.frm1.targname.value;
+                          document.exp.submit();
+                        }
+
+                        function exp2Clicked() {
+                          alert('Please close the browser now');
+                          return false;
+                        }
+
+                        function radioUnitClicked(p_obj)  {
+                          // alert ('obj: ' + p_obj.value);
+                          document.m5prntfrm.unit.value = p_obj.value ;
+                          calcAmounts();
+                        }
+
+                          function checkKeycode(e) {
+						   if (!e) e = window.event;
+						    if (e.which) {
+						      keycode = e.which;
+						    } else if (e.keyCode) {
+						      keycode = e.keyCode;
+						    }
+						    if(keycode==13) {
+						      saveandcalc();
+						    }
+						    else {
+						      return;
+						    }
+                 }
+
+
+                function checkWarnLimit() {
+                  var myObj = document.getElementById('msgdiv');
+                  if (myObj != null) {
+                    if ( document.frm1.targname.value < warnLimit )  {
+                      myObj.innerHTML= warnText;
+                    }
+                    else {
+                      myObj.innerHTML="&nbsp;";
+                    }
+                  } else {
+                    alert('msgdiv lost');
+                  }
+                }
+
+                function estimateWarning(showhide) {
+                  var myObj = document.getElementById('estimatediv');
+                  if (myObj != null) {
+                    if (showhide==1) {
+                      myObj.innerHTML= estimateText;
+                    } else {
+                      myObj.innerHTML= "&nbsp;";
+                    }
+                  }
+                }
+
+                function ShowHideGlossSlider() {
+                  if (document.getElementById("gloss_slider").style.display=='none') {
+                    document.getElementById("gloss_slider").style.display = "inline";
+                  } else {
+                    document.getElementById("gloss_slider").style.display = "none";
+                  }
+                }
+
+               function calcGloss() {
+                 $("#calcGloss").val($("#gloss").val()); 
+                 document.frm1.submit();
+               }
+
+               $(function() {
+                 $( "#calcHint" ).dialog({
+                   autoOpen: false,
+                   show: {
+                     duration: 1
+                   },
+                  hide: {
+                    duration: 1
+                 }
+                });
+                 $( "#calcGif" ).click(function() {
+                   $( "#calcHint" ).dialog( "open" );
+                 });
+               });
+        </script>
+</head>
+<body>
+<center>
+<p>РЕЦЕПТУРА</p>
+<form name="frm1" onsubmit="javascript:calcAmounts();return(false);">	
+ <table>
+    <thead>
+        <tr>
+            <td>Необхідна кількість</td>
+            <td>
+                <input type="text" id="targid" name="targname" class="m5copdet_input" size="12" value="0.5" onkeypress="checkKeycode(event);" onchange="javascript:calcAmounts();return(false);">
+            </td>
+            <td>
+		        <input type="radio" name="unit" value="ltr" checked="checked" onclick="radioUnitClicked(this);"><span>ltr</span>
+		        <input type="radio" name="unit" value="kg" onclick="radioUnitClicked(this);"><span>kg</span>
+		  </td>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr>
+          <th align="left">Компонент</th>
+          <th align="left" width="10"></th>
+          <th align="right"></th>
+          <th align="right">Абсолютна</th>
+          <th align="right">Накопичувальна</th>
+          <th align="center">Кіл-ть</th>
+        </tr>
+        <tr>
+		    <td nowrap>LE81</td>
+		    <td align=left nowrap></td>
+		    <td width="20px" bgcolor="#676F76">&nbsp;</td>
+		    <td id="B_LE81" align="right"><b>1067.6</b></td>
+	        <td id="BC_LE81" align="right"><b>1067.6</b></td> 
+		    <td  align="center">g</td>
+		</tr> 
+        <tr>
+		    <td nowrap> LE54 </td><td align=left nowrap></td>
+		    <td width="20px" bgcolor="#636565">&nbsp;</td>
+		    <td id="B_LE54" align="right"> <b>71.2</b></td>
+	        <td id="BC_LE54" align="right"> <b>1138.8</b></td>
+		    <td  align="center"> g </td>
+		</tr> 
+        <tr>
+		    <td nowrap> M974 </td>
+		    <td align=left nowrap></td>
+		    <td bgcolor="#676F76"></td>
+		    <td id="B_M974" align="right"> <b>175.1</b></td>
+	        <td id="BC_M974" align="right"> <b>1313.9</b></td>
+		    <td  align="center"> g </td>
+		</tr> 
+        <tr>
+		    <td nowrap> M6 </td>
+		    <td align=left nowrap></td>
+		    <td bgcolor="#AF6A64"></td>
+		    <td id="B_M6" align="right"> <b>65.5</b></td>
+	        <td id="BC_M6" align="right"> <b>1379.3</b></td>
+		    <td  align="center"> g </td>
+		</tr> 
+        <tr>
+		    <td nowrap> M26 </td><td align=left nowrap></td>
+		    <td bgcolor="#636565"></td>
+		    <td id="B_M26" align="right"> <b>44.1</b></td>
+		    <td id="BC_M26" align="right"> <b>1423.5</b></td>
+		    <td  align="center"> g </td>
+		</tr> 
+     </tbody>
+</form>
+</table>
+
+   <div id="msgdiv">&nbsp;</div>
+</center>
+
+<form name="m5prntfrm">
+  <input type="hidden" name="col_code" value="701922" >
+  <input type="hidden" name="col_node" value="MS" >
+  <input type="hidden" name="sol_code" value="1694242" >
+  <input type="hidden" name="sol_node" value="MS" >
+  <input type="hidden" name="cop_code" value="169780" >
+  <input type="hidden" name="cop_node" value="MS" >
+  <input type="hidden" name="action" value="" >
+  <input type="hidden" name="calcGloss" value="0" >
+  <input type="hidden" name="amount" value="0.5" >
+  <input type="hidden" name="unit" value="ltr" >
+</form>
+
+</body>
+</html>
