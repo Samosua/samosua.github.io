@@ -89,6 +89,10 @@
 		 border-style:none none solid none;
 		 border-width:0px 0px 1px 0px;
     }
+	hr {
+	width:90%;
+	border: 0.5px solid #ebebeb;
+    }
 	.adapt {
 	     margin:10px;
 	     vertical-align:top;
@@ -130,11 +134,96 @@
          position: relative;
       	 top: 1px;
     }
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* http://www.magentawave.com/2016/09/css-responsive-menu-with-close.html */
+
+.ad-menu *:focus,.ad-menu *::before,.ad-menu *::after {
+  box-sizing: content-box; /*это свойство обязательно*/
+}
+.ad-menu li {
+  display: inline-block;
+ /* background: #c2f272; */
+  font-size: 1.0em;
+  text-align: center;
+  width: 10%;
+}
+.ad-menu li:hover {
+ /* background: #1399D7;  Оригінал #f2d272; */
+}
+.ad-menu li a {
+  display: block;
+  text-decoration: none;
+  color: #222;
+  padding: 5px 0 10px 0;
+  width: 100%;
+}
+/*поведение меню при разрешении менее 920 пикселей*/
+@media screen and (max-width: 920px) {
+.ad-menu li {
+    width: 49.5%;
+  }
+}
+/*поведения и структура при экране менее 680 пикселей*/
+@media screen and (max-width: 680px) {
+.ad-menu li {
+    width: 100%;
+}
+.ad-menu ul {
+  display: none;
+}
+.ad-menu nav::before,
+.ad-menu::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-image: url(menu.png);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.ad-menu nav::before,
+.ad-menu::after {
+  background-color: #ebebeb;
+  border: 9px solid #ebebeb;
+}
+.ad-menu::after {
+  background-position: -24px -24px;
+  z-index: 1;
+}
+.ad-menu nav::before {
+  z-index: 2;
+}
+.ad-menu nav:focus::before {
+  z-index: 0;
+}
+.ad-menu nav:focus ul,
+.ad-menu ul:hover { /*решаем проблему со скликиванием*/
+  display: block;
+}
+}
 </style>
 </head>
-<body>
-<h1 align="center"  style="color:gray">Header | Menu</h1>
+<body style="">
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+<div style="width:100%;background:#F8F8F8"><!-- border: 2px solid #ff0000; -->
+<a href="#"><img width="120px" height="100px" title="baslac в Україні" src="http://www.spotlessknysna.co.za/wp-content/uploads/2016/10/baslac-logo.png" style="margin:0px 0 0 50px"></a>
+</div>
+
+<div class='ad-menu' align="center">
+<nav class='nav' tabindex='1'>
+     <ul>
+         <li><a href='#'><b>НОВИНИ</b></a></li>
+         <li><a href='#'><b>КАТАЛОГ</b></a></li>
+         <li><a href='#'><b>ТЕХДОК</b></a></li>
+         <li><a href='#'><b>КОЛІР</b></a></li>
+     </ul>
+</nav>
+</div>
 <hr>
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+<div style="width: 100%;padding: 5px 5px 5px 5px">
 <div id="print-content">
 <!-- ********************************************************* -->
 <!-- ******************** ВМІСТ ДЛЯ ДРУКУ ******************** -->
@@ -208,11 +297,11 @@
                 <td style="text-align:right">123,47</td>
             </tr>
             <tr>
-                <td><a href="#">TDS</a></td>
+                <td><a href="#" style="text-decoration:none">TDS</a></td>
                 <td style="text-align:right">01.2018</td>
             </tr>
 			<tr>
-                <td><a href="#">MSDS</a></td>
+                <td><a href="#" style="text-decoration:none">MSDS</a></td>
                 <td style="text-align:right">08.2018</td>
             </tr>
         </tbody>
@@ -231,6 +320,7 @@
 <div class="buttonprint">ДРУК</div>
 </a>
 <hr>
-<h1 align="center"  style="color:grey">Footer</h1>
+<p style="text-align:center"><b>baslac.com.ua</b></p>
+<p style="text-align:center"><a href="#" style="text-decoration:none"><b>ЗВ'ЯЗАТИСЯ З НАМИ</b></a></p>
 </body>
 </html>
