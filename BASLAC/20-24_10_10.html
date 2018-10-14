@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="style_baslac.css">
+	<title>baslac 20-24</title>	
+    <script language="JavaScript" type="text/javascript">
+            var nbases = 3 ;
+            var bname = [ "20-24", "50-10", "60-10" ] ;
+            var de = [ 1.668, .971, .875 ];
+            var mcoef1l = [ 1112, 161.8333333333, 145.8333333333 ] ;
+            var mcoef1lcum = [ 0, 0, 0 ] ;
+            var mcoef1kg = [ 783.2824606715, 113.9938952806, 102.7236440479 ] ;
+            var mcoef1kgcum = [ 0, 0, 0 ] ;
+            var dens = 1419.6666666667;
+            var warnLimit = 0.05 ;
+            var warnText = "Обрана маленька кількість. Точність суміші може бути порушена!";
+    	    function calcAmounts()  {
+            var val1, val2, val1str, val2str, dummy;
+             document.frm1.targname.value = Math.round(document.frm1.targname.value * 100)/100;
+            if ( document.frm1.targname.value < 0.0 )  {
+                 document.frm1.targname.value = (document.frm1.targname.value)*(-1.0);
+                }
+             checkWarnLimit();
+             if ( document.frm1.targname.value == 0 )  {
+                 document.frm1.targname.value = warnLimit ;
+                }
+             for ( i=0; i< nbases; i++) {
+                 if ( document.m5prntfrm.unit.value == 'ltr') {
+                     val1 = Math.round(mcoef1l[i]*document.frm1.targname.value*10 )/10 ;
+                    }
+                 else {
+                         val1 = Math.round(mcoef1kg[i]*document.frm1.targname.value*10 )/10 ;
+                    }
+                         val1str = " " + val1;
+                 if (val1str.indexOf(".") < 0) {
+                     val1str=val1str + ".0";
+                    }
+                 dummy = document.getElementById('B_'+bname[i]);
+                 dummy.innerHTML= val1str ;
+                 if ( document.m5prntfrm.unit.value == 'ltr') {
+                         val2 = Math.round(mcoef1lcum[i]*document.frm1.targname.value*10 )/10 ;
+                    }
+                 else {
+                     val2 = Math.round(mcoef1kgcum[i]*document.frm1.targname.value*10 )/10 ;
+                    }
+                     val2str = " " + val2;
+                 if (val2str.indexOf(".") < 0) {
+                     val2str=val2str + ".0";
+                }
+            }       
+        }   
+        function radioUnitClicked(p_obj)  {
+                          document.m5prntfrm.unit.value = p_obj.value ;
+                          calcAmounts();
+        }
+        function checkWarnLimit() {
+                var myObj = document.getElementById('msgdiv');
+            if (myObj != null) {
+                if ( document.frm1.targname.value < warnLimit )  {
+                    myObj.innerHTML= warnText;
+                }
+                else {
+                    myObj.innerHTML="&nbsp;";
+                    }
+            }
+			else {
+                alert('msgdiv lost');
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="width:100%;background:#F8F8F8">
+<a href="http://www.baslac.com.ua"><img width="120px" height="100px" title="baslac в Україні" src="http://www.spotlessknysna.co.za/wp-content/uploads/2016/10/baslac-logo.png" style="margin:0px 0 0 50px"></a>
+</div>
+<div class='ad-menu' align="center">
+<nav class='nav' tabindex='1'>
+     <ul>
+         <li><a href='http://www.baslac.com.ua/news'><b>НОВИНИ</b></a></li>
+         <li><a href='http://www.baslac.com.ua/catalog'><b>КАТАЛОГ</b></a></li>
+         <li><a href='http://www.baslac.com.ua/news/tds'><b>ТЕХДОК</b></a></li>
+         <li><a href='http://www.baslac.com.ua/color'><b>КОЛІР</b></a></li>
+     </ul>
+</nav>
+</div>
+<hr>
+<center>
+<p><a href='index_recipe.html'>СПИСОК РЕЦЕПТІВ</a></p>
+<div style="width:100%">
+<!-- ++++++++++++++++++   БЛОК 1   +++++++++++++++++++ -->
+<div class="adapt">
+<form name="frm1" onsubmit="javascript:calcAmounts();return(false);">
+    <table cellpadding="12">
+        <thead>
+            <tr>
+                <td>Змішати</td>
+                <td align="right"><input type="text" id="targid" name="targname" class="input" size="15" value="0.2" onkeypress="checkKeycode(event);" onchange="javascript:calcAmounts();return(false);">
+			     </td>
+             </tr>			 
+         </thead>
+        <tbody>
+            <tr>
+                <th align="left">Продукт</th>
+                 <th align="right">
+		             <input type="radio" name="unit" onclick="radioUnitClicked(this);" value="ltr" checked="checked"><span>Л</span>
+		             <input type="radio" name="unit" onclick="radioUnitClicked(this);" value="kg"><span>кг</span>
+		         </th>
+             </tr>		
+            <tr>
+    		    <td>20-24</td>
+	    	    <td id="B_20-24" align="right">222.4</td>
+	    	 </tr> 		
+            <tr>
+		        <td>50-10</td>
+    		    <td id="B_50-10" align="right">32.4</td>
+    		 </tr> 		
+            <tr>
+    		    <td>60-10</td>
+    		    <td id="B_60-10" align="right">29.2</td>
+    		 </tr>			 
+         </tbody>
+     </table> 
+</form>
+<form name="m5prntfrm"><input type="hidden" name="unit" value="ltr" ></form>
+<p align="center" id="msgdiv" style="color:red">&nbsp;</p>
+</div>
+<!-- ++++++++++++++++++   БЛОК 2  +++++++++++++++++++ -->
+<div class="adapt">
+    <table cellpadding="12">  
+        <tbody>
+		     <tr>
+                <td>Інформація</td>
+                <td></td>
+             </tr>
+		    <tr>
+			    <th style="text-align:left">Пропорції</th>
+				<th style="text-align:right">4 : 1 : 1</th>
+			</tr>
+            <tr>     
+                <td>Версія</td>
+                <td style="text-align:right">Шліфування</td>
+            </tr>
+            <tr>
+                <td>PG 10.2018</td>
+                <td style="text-align:right">123,47</td>
+            </tr>
+            <tr>
+                <td><a href="#" style="text-decoration:none">TDS</a></td>
+                <td style="text-align:right">01.2018</td>
+            </tr>
+			<tr>
+                <td><a href="#" style="text-decoration:none">MSDS</a></td>
+                <td style="text-align:right">08.2018</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- +++++++++++++++++++++ КІНЕЦЬ БЛОКУ ++++++++++++++++++++++++++++= -->  
+<div align="center">    
+    <p><form><p><textarea placeholder="Введіть сюди коментарі, якщо вони потрібні для друку!" class="comment" rows="3"></textarea></p></form></p>
+</div>
+</div>
+</center>
+
+<div class="buttonprint">
+<a href="#" align="center" style="color:#9c9c9c;text-decoration: none" onclick="window.print();">ДРУК</a>
+</div>
+
+<hr>
+<p style="text-align:center"><a href="http://www.baslac.com.ua/contacts" style="text-decoration:none"><b>ЗВ'ЯЗАТИСЯ З НАМИ</b></a></p>
+</body>
+</html>

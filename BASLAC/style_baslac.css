@@ -1,0 +1,145 @@
+    body {
+	     font-family: Arial, Helvetica, sans-serif;
+		 color:#000;
+	}
+    table {
+         width: 100%; /* Ширина таблиці */
+         border-collapse: collapse; /* Прибираємо подвійні лінії поміж комірками */
+         border: 2px solid white; /* Приховуємо рамку навколо таблиці */
+		 font-size: 14pt;
+    }
+	th, td {
+         border-color:#ebebeb;
+		 border-style:none none solid none;
+		 border-width:0px 0px 1px 0px;
+    }
+	hr {
+	width:90%;
+	border: 0.5px solid #ebebeb;
+    }
+	.adapt {
+	     margin:10px;
+	     vertical-align:top;
+	     display:inline-block;
+	     padding:10px 10px 10px 10px;
+	     width:43%;
+	     min-width:250px;
+	}
+	.input, .select { /* Джерело: http://olocoder.ru/CSS28.html */
+         display: block;
+         width: 120px;
+         padding: 2px;
+         border: 2px solid #ebebeb;
+         border-radius: 2px;
+		 font-size: 13pt;
+         color: #6C6C6C;
+         transition: all 0.2s ease-out;
+    }
+    .input, .select:focus { 
+         outline: none;
+         border-color: #3C78D8;
+		 color: #3C78D8;
+    }
+	.comment {
+         display: block;
+		 font-family: Arial, Helvetica, sans-serif;
+         width: 90%;
+         padding: 5px;
+         border: 2px solid #ebebeb;
+         border-radius: 2px;
+		 font-size: 12pt;
+         color: #6C6C6C;
+         transition: all 0.2s ease-out;
+    }
+    .comment:focus { 
+         outline: none;
+         border-color: #3C78D8;
+		 color: #3C78D8;
+    }
+	.buttonprint, .res {
+		 max-width: 120px;
+		 padding:  7px 10px 7px 10px;
+		 margin: 40px auto;
+		 border-radius: 2px;
+		 border: 2px solid #ebebeb;
+		 text-align: center;
+		 cursor: pointer;
+		 font-size: 12pt;
+    }
+    .buttonprint, .res:hover  {
+         border-color: #3C78D8;
+		 color: #3C78D8;
+    }
+    .buttonprint, .res:active {
+         position: relative;
+      	 top: 1px;
+    }
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* http://www.magentawave.com/2016/09/css-responsive-menu-with-close.html */
+
+.ad-menu *:focus,.ad-menu *::before,.ad-menu *::after {
+  box-sizing: content-box; /*это свойство обязательно*/
+}
+.ad-menu li {
+  display: inline-block;
+ /* background: #c2f272; */
+  font-size: 1.0em;
+  text-align: center;
+  width: 10%;
+}
+.ad-menu li:hover {
+ /* background: #1399D7;  Оригінал #f2d272; */
+}
+.ad-menu li a {
+  display: block;
+  text-decoration: none;
+  color: #222;
+  padding: 5px 0 10px 0;
+  width: 100%;
+}
+/*поведение меню при разрешении менее 920 пикселей*/
+@media screen and (max-width: 920px) {
+.ad-menu li {
+    width: 49.5%;
+  }
+}
+/*поведения и структура при экране менее 680 пикселей*/
+@media screen and (max-width: 680px) {
+.ad-menu li {
+    width: 100%;
+}
+.ad-menu ul {
+  display: none;
+}
+.ad-menu nav::before,
+.ad-menu::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-image: url(menu.png);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.ad-menu nav::before,
+.ad-menu::after {
+  background-color: #ebebeb;
+  border: 9px solid #ebebeb;
+}
+.ad-menu::after {
+  background-position: -24px -24px;
+  z-index: 1;
+}
+.ad-menu nav::before {
+  z-index: 2;
+}
+.ad-menu nav:focus::before {
+  z-index: 0;
+}
+.ad-menu nav:focus ul,
+.ad-menu ul:hover { /*решаем проблему со скликиванием*/
+  display: block;
+}
+}
