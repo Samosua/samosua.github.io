@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<!-- <link rel="stylesheet" href="style_baslac.css"> -->
+    <title>baslac РЕЦЕПТИ</title>
+    <script>
+        window.onload = function() {
+            var tab = document.querySelector('#sf'),
+                tr = tab.querySelectorAll('tr:nth-child(n+2)'),
+                sel = tab.querySelectorAll('select'),
+                arr = [],
+                res = document.querySelector('.res');
+            Array.prototype.forEach.call(sel, function(a, b) {
+                arr[b] = a.value;
+                a.onchange = function() {
+                    arr[b] = a.value;
+                    a.options[0].selected = !0;
+                    Array.prototype.forEach.call(tr, function(a, b) {
+                        var c = Array.prototype.every.call(a.querySelectorAll("td"), function(a, b) {
+                            return RegExp(arr[b]).test(a.textContent)
+                        });
+                        a.style.display = c ? "" : "none"
+                    })
+                }
+            });
+           res.onclick =  function() {
+                for (var i=0; i<sel.length; i++)  {sel[i].onchange()}               }
+        }
+    </script>
+</head>
+<body>
+<br>
+<hr>
+<!-- *************************** ТАБЛИЦЯ ****************************** -->
+<style>
+body    {
+        font-family: Arial; /*  */
+	    font-size: 14pt; /* Не впливає на таблицю */
+    }
+a       {
+        text-decoration: none; /* Прибираємо підкреслення в посиланнях */
+    }
+table   {
+        width: 100%; /* Ширина таблиці */
+		font-size: 13pt; /*  */
+		text-align: center;
+    }
+th, td  {
+        border-color:#ebebeb; /* Колір рамки  */
+		border-style:solid; /* Стиль рамки по колу*/
+		border-width:0px 0px 0.5px 0px; /* Товщина рамки по колу */
+		padding: 10px 0px 10px 0px;  /* Поля в середині*/
+    }
+hr      {
+	    width:100%; /*  */
+	    border: 0.5px solid #808080; /*  */
+    }
+</style>
+    <table id="sf" cellspacing="0">
+	<tbody>
+        <tr>
+			<td colspan="3">ВИБЕРІТЬ <input type="button" value="СКИНУТИ" class="res"></td>
+        </tr>
+		<tr>
+		    <th>Продукт</th>
+		    <th>Затвер.</th>
+		    <th>Розрід.</th>
+		</tr>
+        <tr>
+            <td>
+			    <select class="select">
+                    <option value="">Всі</option>
+                    <option value="20-24">20-24</option>
+					<option value="20-34">20-34</option>
+					<option value="20-35">20-35</option>
+                </select>
+            </td>
+			<td>
+                <select class="select">
+                    <option value="">Всі</option>
+                    <option value="50-10">50-10</option>
+                    <option value="50-15">50-15</option>
+                </select>
+            </td>
+			<td>
+                <select class="select">
+                    <option value="">Всі</option>
+                    <option value="60-10">60-10</option>
+					<option value="60-20">60-20</option>
+					<option value="60-30">60-30</option>
+                </select>
+            </td>
+        </tr>
+
+<!-- ********** ГРУНТ-НАПОВНЮВАЧ СІРИЙ 20-24 ************************** -->
+
+		<tr>
+			<td><a href="#" title="20-24 ГРУНТ-НАПОВНЮВАЧ, СІРИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-24</a></td>
+            <td>50-10</td>
+            <td>60-10</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-24 ГРУНТ-НАПОВНЮВАЧ, СІРИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-24</a></td>
+            <td>50-10</td>
+            <td>60-20</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-24 ГРУНТ-НАПОВНЮВАЧ, СІРИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-24</a></td>
+            <td>50-10</td>
+            <td>60-30</td>
+        </tr>
+        <tr>
+			<td><a href="#" title="20-24 ГРУНТ-НАПОВНЮВАЧ, СІРИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-24</a></td>
+            <td>50-15</td>
+            <td>60-10</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-24 ГРУНТ-НАПОВНЮВАЧ, СІРИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-24</a></td>
+            <td>50-15</td>
+            <td>60-20</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-24 ГРУНТ-НАПОВНЮВАЧ, СІРИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-24</a></td>
+            <td>50-15</td>
+            <td>60-30</td>
+        </tr>
+
+<!-- ********** ГРУНТ-НАПОВНЮВАЧ БІЛИЙ 20-34 ************************** -->
+
+		<tr>
+			<td><a href="#" title="20-34 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-34</a></td>
+            <td>50-10</td>
+            <td>60-10</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-34 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-34</a></td>
+            <td>50-10</td>
+            <td>60-20</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-34 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-34</a></td>
+            <td>50-10</td>
+            <td>60-30</td>
+        </tr>
+        <tr>
+			<td><a href="#" title="20-34 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-34</a></td>
+            <td>50-15</td>
+            <td>60-10</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-34 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-34</a></td>
+            <td>50-15</td>
+            <td>60-20</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-34 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1">20-34</a></td>
+            <td>50-15</td>
+            <td>60-30</td>
+        </tr>
+<!-- ********** ГРУНТ-НАПОВНЮВАЧ БІЛИЙ, БЕЗ ШЛІФУВАННЯ 20-35 ********** -->
+
+		<tr>
+			<td><a href="#" title="20-35 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. БЕЗ ШЛІФУВАННЯ 3:1:1">20-35</a></td>
+            <td>50-10</td>
+            <td>60-20</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-35 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. БЕЗ ШЛІФУВАННЯ 3:1:1">20-35</a></td>
+            <td>50-10</td>
+            <td>60-30</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-35 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. БЕЗ ШЛІФУВАННЯ 3:1:1">20-35</a></td>
+            <td>50-15</td>
+            <td>60-20</td>
+        </tr>
+		<tr>
+			<td><a href="#" title="20-35 ГРУНТ-НАПОВНЮВАЧ, БІЛИЙ. БЕЗ ШЛІФУВАННЯ 3:1:1">20-35</a></td>
+            <td>50-15</td>
+            <td>60-30</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
