@@ -101,15 +101,15 @@
           <img class="android-logo-image" src="images/customLogo-white.png">
         </span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Очисник FEYCO V153</a>
-          <a class="mdl-navigation__link" href="">Шпаклівка FEYCO 1070</a>
-          <a class="mdl-navigation__link" href="">Грунт FEYCO E9-2242</a>
-          <a class="mdl-navigation__link" href="">Грунт FEYCO 1090</a>
-          <a class="mdl-navigation__link" href="">Грунт FEYCO</a>
-          <a class="mdl-navigation__link" href="">Фарба FEYCO LE</a>
-          <a class="mdl-navigation__link" href="">Фарба FEYCO SP</a>
-		  <a class="mdl-navigation__link" href="">Лак FEYCO 1485</a>
-		  <a class="mdl-navigation__link" href="">Лак FEYCO 1495</a>
+          <a class="mdl-navigation__link" href="index.html">Очисник FEYCO V153</a>
+          <a class="mdl-navigation__link" href="page2.html">Шпаклівка FEYCO 1070</a>
+          <a class="mdl-navigation__link" href="page3.html">Грунт FEYCO E9-2242</a>
+          <a class="mdl-navigation__link" href="page4.html">Грунт FEYCO 1090</a>
+          <a class="mdl-navigation__link" href="page5.html">Грунт FEYCO</a>
+          <a class="mdl-navigation__link" href="page6.html">Фарба FEYCO LE</a>
+          <a class="mdl-navigation__link" href="page7.html">Фарба FEYCO SP</a>
+		  <a class="mdl-navigation__link" href="page8.html">Лак FEYCO 1485</a>
+		  <a class="mdl-navigation__link" href="page9.html">Лак FEYCO 1495</a>
         </nav>
       </div>
 
@@ -136,13 +136,15 @@
                 <label class="mdl-textfield__label" for="areaA">На площу (м/кв)</label>
                 <span class="mdl-textfield__error">Введіть тільки цифри!</span>
             </div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<p>Необхідно <output id="resultA" style="font-size:25pt;text-align:center"></output>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><br>
+			<p style="font-size:12pt">Необхідно</p>
+            </div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><br>
+			<output id="resultA" style="font-size:25pt;text-align:center"></output>
 		        <select id="unitA" onchange="calcArea()">
                     <option value="100"> мл</option>
                     <option value="150"> гр</option>
                 </select>
-		    </p>
             </div>
 			<p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
         </form>
@@ -161,8 +163,11 @@
                     <option value="150"> гр</option>
                 </select>
 			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<p>Mожливо використати на площі <output id="resultU" style="font-size:25pt;text-align:center"></output> м/кв</p>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><br>
+			<p style="font-size:12pt">Mожливо використати на площі</p>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><br>
+			<p style="font-size:12pt"><output id="resultU" style="font-size:25pt;text-align:center"></output> м/кв</p>
 			</div>
 			<p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
         </form>
