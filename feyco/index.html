@@ -85,9 +85,9 @@
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://www.feyco.com.ua/methods">Методы</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://www.feyco.com.ua/methods">Методи</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://www.feyco.com.ua/colorcatalog">Каталоги</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://www.feyco.com.ua/contacts">Контакты</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://www.feyco.com.ua/contacts">Контакти</a>
             </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">
@@ -101,13 +101,13 @@
           <img class="android-logo-image" src="images/customLogo-white.png">
         </span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Очиститель FEYCO V153</a>
-          <a class="mdl-navigation__link" href="">Шпаклевка FEYCO 1070</a>
+          <a class="mdl-navigation__link" href="">Очисник FEYCO V153</a>
+          <a class="mdl-navigation__link" href="">Шпаклівка FEYCO 1070</a>
           <a class="mdl-navigation__link" href="">Грунт FEYCO E9-2242</a>
           <a class="mdl-navigation__link" href="">Грунт FEYCO 1090</a>
           <a class="mdl-navigation__link" href="">Грунт FEYCO</a>
-          <a class="mdl-navigation__link" href="">Краска FEYCO LE</a>
-          <a class="mdl-navigation__link" href="">Краска FEYCO SP</a>
+          <a class="mdl-navigation__link" href="">Фарба FEYCO LE</a>
+          <a class="mdl-navigation__link" href="">Фарба FEYCO SP</a>
 		  <a class="mdl-navigation__link" href="">Лак FEYCO 1485</a>
 		  <a class="mdl-navigation__link" href="">Лак FEYCO 1495</a>
         </nav>
@@ -119,12 +119,7 @@
 		
         <div class="android-customized-section">
           <div class="android-customized-section-text">
-            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Расчет Очистителя FEYCO V153</div>
-            <p class="mdl-typography--font-light">
-              Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)
-              <br>
-              <a href="" class="android-link mdl-typography--font-light"></a>
-            </p>
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Розрахунок<br>Очисника FEYCO V153</div>
           </div>
              <!-- ======================= БЛОК КАЛЬКУЛЯТОРІВ ======================= -->	
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
@@ -136,7 +131,6 @@
     <div class="mdl-tabs__panel is-active" id="starks-panel">
         <form onsubmit="return false">
 		    <br>
-		    <p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" style="font-size:25pt;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaA" value="1.0" oninput="calcArea()">
                 <label class="mdl-textfield__label" for="areaA">На площу (м/кв)</label>
@@ -150,6 +144,7 @@
                 </select>
 		    </p>
             </div>
+			<p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
         </form>
     </div>
     <!-- ========================= КІНЕЦЬ ФОРМИ НА ПЛОЩУ calcArea ========================== -->
@@ -157,10 +152,9 @@
 	<div class="mdl-tabs__panel" id="lannisters-panel">
 	    <form onsubmit="return false;">
 		<br>
-		    <p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			    <input class="mdl-textfield__input" style="font-size:25pt;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaU" value="100.0" oninput="calcUnit()">
-                <label class="mdl-textfield__label" for="areaA">На площу (м/кв)</label>
+                <label class="mdl-textfield__label" for="areaU">На кількість</label>
                 <span class="mdl-textfield__error">Введіть тільки цифри!</span>
 				<select id="unitU" onchange="calcUnit()">
                     <option value="100"> мл</option>
@@ -170,6 +164,7 @@
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<p>Mожливо використати на площі <output id="resultU" style="font-size:25pt;text-align:center"></output> м/кв</p>
 			</div>
+			<p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
         </form>
 	</div>
 	<!-- ========================= КІНЕЦЬ ФОРМИ НА КІЛЬКІСТЬ calcUnit ========================== -->
