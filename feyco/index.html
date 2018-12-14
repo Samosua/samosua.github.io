@@ -127,68 +127,42 @@
         <a href="#starks-panel" class="mdl-tabs__tab is-active">На площу</a>
         <a href="#lannisters-panel" class="mdl-tabs__tab">На кількість</a>	  
     </div>
-    <!-- ======================= РОЗРАХУНОК НА ПЛОЩУ calcArea ======================= -->
-
-    <div class="mdl-tabs__panel is-active" id="starks-panel">
-	<table  border="0" cellpadding="0" style="margin: auto;max-width:80%" cellspacing="0" cellpadding="5" border="1">
-        <form onsubmit="return false">
-		    <tr>
-			    <td colspan="2">
-				    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" style="font-size:25pt;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaA" value="1.0" oninput="calcArea()">
-                        <label class="mdl-textfield__label" for="areaA">На площу (м/кв)</label>
-                        <span class="mdl-textfield__error">Введіть тільки цифри!</span>
-				    </div>
-				</td>
-			</tr>
-			<tr>
-			    <td colspan="2">
-			            <p style="font-size:15pt">Необхідно</p>
-				</td>
-			</tr>
-			<tr>
-			    <td>
-				    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			            <output id="resultA" style="font-size:25pt;text-align:center"></output>
-                    </div>
-			    </td>
-				<td>
-				    <select class="mdl-textfield__input" style="font-size:12pt;width:100px" id="unitA" name="unitA" onchange="calcArea()">
-                        <option value="100"> мл</option>
-                        <option value="150"> гр</option>
-                    </select>
-				</td>
-			</tr>
-			<tr>
-			    <td colspan="2" style="color:red"><p>Увага! Кількість продуктів вказана тільки як RFU<br>(Готовий до використання)</p></td>
-			</tr>
-        </form>
-	</table>
-    </div>
-
-    <!-- ========================= КІНЕЦЬ ФОРМИ НА ПЛОЩУ calcArea ========================== -->
-    <!-- ======================= РОЗРАХУНОК НА КІЛЬКІСТЬ calcUnit ======================= -->
-	<div class="mdl-tabs__panel" id="lannisters-panel">
-	    <form onsubmit="return false;">
-		<br>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			    <input class="mdl-textfield__input" style="font-size:25pt;text-align:center;width:150px" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaU" value="100.0" oninput="calcUnit()">
-                <label class="mdl-textfield__label" for="areaU">На кількість</label>
+	<!-- ++++++++++++++++++++++++++++ -->
+<div class="demo-card-wide mdl-card mdl-shadow--2dp" style="min-width:200px; width:60% ;max-height: 600px;margin-top: 20px; margin-left: auto;margin-right: auto;background: #fff">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Очисник<br>FEYCO V153</h2>
+  </div>
+  <div class="mdl-card__supporting-text" style="text-align:center">
+    Для розрахунку вводьте тільки цифри. Якщо потрібно ввести значення з десятими - вводьте тільки з крапкою (наприклад 1.5). Зверніть увагу, що розрахунок є орієнтовним та може бути фактичним - витрати залежать від багатьох факторів.<br>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" style="font-size:25pt;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaA" value="1.0" oninput="calcArea()">
+                <label class="mdl-textfield__label" for="areaA">На площу (м/кв)</label>
                 <span class="mdl-textfield__error">Введіть тільки цифри!</span>
-				<select class="mdl-textfield__input" style="font-size:12pt;width:150px" id="unitU" name="unitU" onchange="calcUnit()">
-                    <option value="100"> мл</option>
-                    <option value="150"> гр</option>
-                </select>
-			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><br>
-			<p style="font-size:12pt">Mожливо використати на площі</p>
-			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><br>
-			<p style="font-size:12pt"><output id="resultU" style="font-size:25pt;text-align:center"></output> м/кв</p>
-			</div>
-			<p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
-        </form>
-	</div>
+            </div>
+  </div>
+  <hr>
+  <div class="mdl-card__supporting-text" style="text-align:center">
+    Для розрахунку вводьте тільки цифри. Якщо потрібно ввести значення з десятими - вводьте тільки з крапкою (наприклад 1.5). Зверніть увагу, що розрахунок є орієнтовним та може бути фактичним - витрати залежать від багатьох факторів.<br>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" style="font-size:25pt;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaA" value="1.0" oninput="calcArea()">
+                <label class="mdl-textfield__label" for="areaA">На площу (м/кв)</label>
+                <span class="mdl-textfield__error">Введіть тільки цифри!</span>
+            </div>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Розрахувати
+    </a>
+  </div>
+  <div class="mdl-card__menu">
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+      <i class="material-icons">print</i>
+    </button>
+  </div> 
+</div>
+</div>
+	
+        
 	<!-- ========================= КІНЕЦЬ ФОРМИ НА КІЛЬКІСТЬ calcUnit ========================== -->
 </div>
         </div>
