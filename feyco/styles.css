@@ -24,12 +24,12 @@ a img{
 }
 
 ::-moz-selection {
-  background-color: #6ab344;
+  background-color: #6D9EEB;
   color: #fff;
 }
 
 ::selection {
-  background-color: #6ab344;
+  background-color: #6D9EEB;
   color: #fff;
 }
 
@@ -52,7 +52,7 @@ a img{
   right: 20%;
   bottom: -26px;
   z-index: 3;
-  background: #64ffda !important;
+  background: #6495ED !important;
   color: black !important;
 }
 
@@ -122,7 +122,7 @@ a img{
   }
 
     .android-navigation .mdl-navigation__link:hover {
-      border-bottom: 4px solid #8bc34a;
+      border-bottom: 4px solid #6D9EEB;
     }
 
   .android-search-box {
@@ -156,12 +156,12 @@ a img{
   }
 
   .android-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #8bc34a;
+    color: #6D9EEB;
   }
 
   .android-drawer .mdl-layout-title {
     position: relative;
-    background: #6ab344;
+    background: #6D9EEB;
     height: 160px;
   }
 
@@ -329,7 +329,7 @@ a img{
 
 .android-link {
   text-decoration: none;
-  color: #8bc34a !important;
+  color: #6D9EEB !important;
 }
 
   .android-link:hover {
@@ -429,12 +429,12 @@ a img{
   }
 
 .android-footer {
-  background-color: #fafafa;
+  background-color: #B9B9B9;
   position: relative;
 }
 
   .android-footer a:hover {
-    color: #8bc34a;
+    color: #6D9EEB;
   }
 
   .android-footer .mdl-mega-footer--top-section::after {
