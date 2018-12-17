@@ -1,0 +1,91 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+	<script src="js/calcFeyco.js"></script>
+		<style>
+html {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  font-size: 18px;
+  }
+h1, h2, h3 {
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.calc_input {
+  margin: 10px 6px;
+  padding: 4px;
+  border: 1px solid;
+  border-color: transparent transparent #DEDEDE transparent;
+  transition: all 0.2s ease-out;
+  font-size: 20px;
+}
+.calc_input:focus { 
+  outline: none;
+  border: 2px solid;
+  border-color:  transparent transparent #3F51B5 transparent;
+  font-size: 22px;
+}
+.block {
+  overflow:hidden;
+  padding: 4px;
+}
+.box{
+  display:inline-block;
+}
+	</style>
+</head>
+<body style="text-align:center">
+<br>
+<h2>Розрахунок</h2>
+<h3>Грунта-ізолятора FEYCO ISOFILL 1070</h3>
+<p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
+<br>
+<div class="">
+    <div class="">
+        <a href="#" class="">На площу</a>
+        <a href="#" class="">На кількість</a>	  
+    </div>
+	<br><hr style="border:0.1pt solid #cecece;width:70%">
+    <!-- ======================= РОЗРАХУНОК НА ПЛОЩУ calcArea ======================= -->
+    <div class="block">
+        <form onsubmit="return false"><br>
+			<div class="box">
+                На площу 
+				<input class="calc_input" style="height:30px;width:100px;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaA" value="1.0" oninput="calcArea()" placeholder="Введіть площу"> 
+				м/кв
+            </div>
+			<div class="block">
+			Необхідно <b><output id="resultA" style="text-align:center"></output></b>
+		        <select id="unitA" onchange="calcArea()" class="calc_input" style="height: 30px">
+                    <option value="139"> мл</option>
+                    <option value="180"> гр</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <!-- ========================= КІНЕЦЬ ФОРМИ НА ПЛОЩУ calcArea ========================== -->
+	<hr style="border:0.1pt solid #cecece;width:70%">
+    <!-- ======================= РОЗРАХУНОК НА КІЛЬКІСТЬ calcUnit ======================= -->
+	<div class="block">
+	    <form onsubmit="return false;"><br>
+			<div class="box">
+			    Кількість 
+				<input class="calc_input" style="height:30px; width:100px;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaU" value="100.0" oninput="calcUnit()" placeholder="Ведіть кількість"">
+				<select id="unitU" onchange="calcUnit()" class="calc_input" style="height: 30px">
+                    <option value="139"> мл</option>
+                    <option value="180"> гр</option>
+                </select>
+			</div>
+			<div class="block">
+			Mожливо використати на площі <b><output id="resultU" style="text-align:center"></output></b> м/кв
+			</div>
+        </form>
+	</div>
+	<!-- ========================= КІНЕЦЬ ФОРМИ НА КІЛЬКІСТЬ calcUnit ========================== -->
+</div>
+</body>
+</html>
