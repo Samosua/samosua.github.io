@@ -1,91 +1,171 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
-	<script src="js/calcFeyco.js"></script>
-		<style>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Калькулятор в таблиці</title>
+	<script>
+	function calcArea(){
+    var result = 0;
+    var areaA = document.getElementById('areaA').value;
+    var unitA = document.getElementById('unitA').options[document.getElementById('unitA').selectedIndex].value;
+    result = parseFloat(areaA)||0;
+    result *= parseFloat(unitA)||0; 
+    document.getElementById('resultA').innerHTML = result.toFixed(1);
+}
+    function calcUnit(){
+    var result = 0;
+    var areaU = document.getElementById('areaU').value;
+    var unitU = document.getElementById('unitU').options[document.getElementById('unitU').selectedIndex].value;
+        result = parseFloat(areaU)||0;
+        result /= parseFloat(unitU)||0; 
+        document.getElementById('resultU').innerHTML = result.toFixed(1);
+}
+	function calcSize(){
+    var result = 0;
+    var longS = document.getElementById('longS').value;
+	var widthS = document.getElementById('widthS').value;
+    var unitS = document.getElementById('unitS').options[document.getElementById('unitS').selectedIndex].value;
+    result = parseFloat(longS)||0;
+    result *= parseFloat(widthS)||0;
+	result *= parseFloat(unitS)||0;
+    document.getElementById('resultS').innerHTML = result.toFixed(1);
+}
+	</script>
+	<style>
+	@import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto");
 html {
-  font-family: 'Roboto', sans-serif;
-  color: #000;
-  font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+	text-align: center;
   }
-h1, h2, h3 {
-  font-weight: 400;
-  font-size: 45px;
-  line-height: 20px;
-  color: rgba(0, 0, 0, 0.87);
-}
-.calc_input {
-  margin: 10px 6px;
-  padding: 4px;
-  border: 1px solid;
-  border-color: transparent transparent #DEDEDE transparent;
-  transition: all 0.2s ease-out;
-  font-size: 20px;
-}
-.calc_input:focus { 
-  outline: none;
-  border: 2px solid;
-  border-color:  transparent transparent #3F51B5 transparent;
-  font-size: 22px;
-}
-.block {
-  overflow:hidden;
-  padding: 4px;
-}
-.box{
-  display:inline-block;
-}
+  	hr {
+	 width:60%;
+	 min-width: 300px;
+	 border: 0.5px solid #E0E0E0;
+	}
+	table {
+	    width: 60%; /* Ширина таблицы */
+		min-width: 300px;
+        border: 0px solid #000; /* Рамка вокруг таблицы */
+        margin: auto; /* Выравниваем таблицу по центру окна  */
+		text-align:left;
+	}
+	td {
+	    border: 0px solid #000; /* Рамка вокруг таблицы */
+	    height:35px;
+	}
+	.calc_input {
+	width:80px;
+	height:30px;
+	    font-size:18px;
+	    text-align:center;
+        padding: 4px;
+        border-top:0;
+        border-left:0;
+        border-right:0;
+        border-bottom: 0.5px solid #E0E0E0;
+	}
+	.calc_input:focus {
+	    width:80px;
+	    height:30px;
+	    font-size:18px;
+        outline: none;
+        border-top:0;
+        border-left:0;
+        border-right:0;
+        border-bottom: 1.5px solid #3F51B5;
+	}
 	</style>
 </head>
-<body style="text-align:center">
-<br>
+<body>
 <h2>Розрахунок</h2>
 <h3>Грунта-ізолятора FEYCO ISOFILL 1070</h3>
 <p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
-<br>
-<div class="">
-    <div class="">
-        <a href="#" class="">На площу</a>
-        <a href="#" class="">На кількість</a>	  
-    </div>
-	<br><hr style="border:0.1pt solid #cecece;width:70%">
-    <!-- ======================= РОЗРАХУНОК НА ПЛОЩУ calcArea ======================= -->
-    <div class="block">
-        <form onsubmit="return false"><br>
-			<div class="box">
-                На площу 
-				<input class="calc_input" style="height:30px;width:100px;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaA" value="1.0" oninput="calcArea()" placeholder="Введіть площу"> 
-				м/кв
-            </div>
-			<div class="block">
-			Необхідно <b><output id="resultA" style="text-align:center"></output></b>
-		        <select id="unitA" onchange="calcArea()" class="calc_input" style="height: 30px">
-                    <option value="139"> мл</option>
-                    <option value="180"> гр</option>
-                </select>
-            </div>
-        </form>
-    </div>
-    <!-- ========================= КІНЕЦЬ ФОРМИ НА ПЛОЩУ calcArea ========================== -->
-	<hr style="border:0.1pt solid #cecece;width:70%">
-    <!-- ======================= РОЗРАХУНОК НА КІЛЬКІСТЬ calcUnit ======================= -->
-	<div class="block">
-	    <form onsubmit="return false;"><br>
-			<div class="box">
-			    Кількість 
-				<input class="calc_input" style="height:30px; width:100px;text-align:center" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="areaU" value="100.0" oninput="calcUnit()" placeholder="Ведіть кількість"">
-				<select id="unitU" onchange="calcUnit()" class="calc_input" style="height: 30px">
-                    <option value="139"> мл</option>
-                    <option value="180"> гр</option>
-                </select>
-			</div>
-			<div class="block">
-			Mожливо використати на площі <b><output id="resultU" style="text-align:center"></output></b> м/кв
-			</div>
-        </form>
+<div>
+    <div>
+	    <table>
+			<form onsubmit="return false">
+			    <tr>
+				    <th colspan="3">НА ПЛОЩУ</th>
+				</tr>
+			    <tr>
+				    <td>На площу</td>
+					<td style="text-align:center"><input id="areaA" oninput="calcArea()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="1.0" placeholder="Введіть площу"></td>
+					<td style="text-align:right">м/кв</td>
+				</tr>
+				<tr>
+				    <td>Необхідно</td>
+					<td style="text-align:center"><output id="resultA"></output></td>
+					<td style="text-align:right"><select id="unitA" onchange="calcArea()" class="calc_input">
+            	        <option value="139"> мл</option>
+                	    <option value="180"> гр</option>
+    	            </select></td>
+				</tr>
+			</form>
+		</table>
 	</div>
-	<!-- ========================= КІНЕЦЬ ФОРМИ НА КІЛЬКІСТЬ calcUnit ========================== -->
+	
+	<br>
+	<hr>
+	<br>
+	
+    <div>
+	    <table>
+		    <form onsubmit="return false;">
+				<tr>
+				    <th colspan="3">НА КІЛЬКІСТЬ</th>
+				</tr>
+			    <tr>
+				    <td>Кількість</td>
+					<td style="text-align:center"><input id="areaU" oninput="calcUnit()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="100.0" placeholder="Ведіть кількість"></td>
+					<td style="text-align:right">
+					<select id="unitU" onchange="calcUnit()" class="calc_input">
+                        <option value="139"> мл</option>
+                        <option value="180"> гр</option>
+                    </select></td>
+				</tr>
+				<tr>
+				    <td>Mожливо використати на площі</td>
+					<td style="text-align:center"><output id="resultU"></output></td>
+					<td style="text-align:right">м/кв</td>
+				</tr>
+			</form>
+	    </table>
+	</div>
+	
+	<br>
+	<hr>
+	<br>
+	
+    <div>
+	    <table>
+		
+			<tr>
+			    <th colspan="3">НА РОЗМІР</th>
+			</tr>
+		    <tr>
+			    <td>На довжину</td>
+				<td style="text-align:center"><input id="longS" oninput="calcSize()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="100.0" placeholder="Введіть площу"></td>
+				<td style="text-align:right">см</td>
+			</tr>
+			<tr>
+			    <td>та ширину</td>
+				<td style="text-align:center"><input id="widthS" oninput="calcSize()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="100.0" placeholder="Введіть площу"></td>
+				<td style="text-align:right">см</td>
+			</tr>
+			<tr>
+			    <td>Необхідно</td>
+				<td style="text-align:center"><output id="resultS"></output></td>
+				<td style="text-align:right">
+				    <select id="unitS" onchange="calcSize()" class="calc_input">
+            	        <option value="0.0139"> мл</option>
+                	    <option value="0.0180"> гр</option>
+    	            </select></td>
+			</tr>
+			
+	    </table>
+	</div>
 </div>
 </body>
 </html>
