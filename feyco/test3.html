@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<title>ACCORDION_FULL CSS</title>
+<style>
+.ac-container{ /* Весь контейнер аккордіону*/
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    max-width: 450px;
+    width: 100%;
+    margin: 10px auto 30px auto;
+}
+.ac-container label{ /* Ярлик назви блоку */
+    border-bottom: 0.5px solid #EBEBEB;
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: #737373;
+    line-height: 33px;
+    font-size: 18px;
+}
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
+    border-bottom: 1.5px solid #3F51B5;
+    color: #000; /* Колір тексту при виборі */
+}
+.ac-container input{
+   display: none;
+}
+.ac-container article{ /* Блок з контентом? */
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: -1px;
+    overflow: hidden;
+    height: 0px;
+    position: relative;
+    z-index: 10;
+  /* Повільна анімацію зсуву блоку аккордіон */
+    -webkit-transition: height 0.3s ease-in-out;
+    -moz-transition: height 0.3s ease-in-out;
+    -o-transition: height 0.3s ease-in-out;
+    -ms-transition: height 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out;
+}
+.ac-container input:checked ~ article {
+    -webkit-transition: height 0.3s ease-in-out;
+    -moz-transition: height 0.3s ease-in-out;
+    -o-transition: height 0.3s ease-in-out;
+    -ms-transition: height 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out;
+    height: 200px; /* Висота блоку з контентом */
+}
+.ac-container article p { /* Блоки з текстом */
+    color: #000;
+    line-height: 18px;
+    font-size: 14px;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+<section class="ac-container">
+<div>
+<input id="ac-1" name="accordion-1" type="radio" checked />
+<label for="ac-1">НА ПЛОЩУ</label>
+        <article>
+            <p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.</p>
+        </article>
+    </div>
+    <div>
+        <input id="ac-2" name="accordion-1" type="radio" />
+        <label for="ac-2">НА РОЗМІР</label>
+        <article>
+            <p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.</p>
+        </article>
+    </div>
+    <div>
+        <input id="ac-3" name="accordion-1" type="radio" />
+        <label for="ac-3">НА КІЛЬКІСТЬ</label>
+        <article>
+            <p>Какой нибудь замечательный текст...</p>
+        </article>
+    </div>
+</section>
+</body>
+</html>
