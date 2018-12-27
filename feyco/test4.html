@@ -1,0 +1,196 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>CALC V1.0</title>
+	<script>
+		function calcArea(){
+    var result = 0;
+    var areaA = document.getElementById('areaA').value;
+    var unitA = document.getElementById('unitA').options[document.getElementById('unitA').selectedIndex].value;
+    result = parseFloat(areaA)||0;
+    result *= parseFloat(unitA)||0; 
+    document.getElementById('resultA').innerHTML = result.toFixed(1);
+}
+	function calcSize(){
+    var result = 0;
+    var longS = document.getElementById('longS').value;
+	var widthS = document.getElementById('widthS').value;
+    var unitS = document.getElementById('unitS').options[document.getElementById('unitS').selectedIndex].value;
+    result = parseFloat(longS)||0;
+    result *= parseFloat(widthS)||0;
+	result *= parseFloat(unitS)||0;
+    document.getElementById('resultS').innerHTML = result.toFixed(1);
+}
+    function calcUnit(){
+    var result = 0;
+    var areaU = document.getElementById('areaU').value;
+    var unitU = document.getElementById('unitU').options[document.getElementById('unitU').selectedIndex].value;
+        result = parseFloat(areaU)||0;
+        result /= parseFloat(unitU)||0; 
+        document.getElementById('resultU').innerHTML = result.toFixed(1);
+}
+	</script>
+	<style>
+	html{
+  font-family: Arial;
+  background:#f8f8f8;
+}
+/* ++++++++++++++++++++++++++ */
+.calc-input {
+  width: 100%;
+  text-align:center;
+  font-size: 25px;
+   /* padding: 2px; */
+  border-top:0;
+  border-left:0;
+  border-right:0;
+  border-bottom: 0.3px solid #E6E6E6;
+  transition: all 0.1s ease-out;
+ }
+.calc-input:focus { 
+  outline: none;
+  border-top:0;
+  border-left:0;
+  border-right:0;
+  border-bottom: 2px solid #3F51B5;
+}
+.calc-select {
+  background:#fff;
+  width: 55px;
+  text-align:center;
+  font-size: 16px;
+   /* padding: 2px; */
+  border-top:0;
+  border-left:0;
+  border-right:0;
+  border-bottom: 0.3px solid #E6E6E6;
+  transition: all 0.1s ease-out;
+ }
+/*	
+.calc-input, .calc-select.text {
+    text-align: center;
+	font-size: 20px;
+    border: 1pt solid;
+    border-color:  transparent transparent #E6E6E6 transparent ;
+    width: 120px;
+    height: 42px;
+}
+.calc-input.text:focus {
+    border: 1.5pt solid;
+    border-color:  transparent transparent #3F51B5 transparent ;
+} */
+
+
+/* ++++++++++++++++++++++++++ */
+.container {
+  border: 0.5px solid #737373;
+  background:#fff;
+  border-radius:3px;
+}
+.block-1 {
+  background:#fff;
+  padding: 10px 0 10px 20px;
+  margin:0px;
+  border-top: 1.5px solid #3F51B5;
+}
+.block {
+  display: inline-block;
+  vertical-align: top; /* Вирівнювання по верхньому краю */
+  padding:10px;
+  margin:10px;
+  width:40%;
+  min-width:200px;
+  border-radius:3px;
+  text-align:left;
+  /*box-shadow: 0 0 10px rgba(0,0,0,0.5); */
+  box-shadow: -10px 0 20px -20px #aaa, 
+               10px 0 20px -20px #aaa,
+               0 3px 5px -1px #aaa;
+  }
+/* +++++ СТИЛІ ДЛЯ АККОРДИОНУ +++++ */
+.accordion [name="tabl"] { display: none; }
+.accordion > :not(input):not(label) { /* Вкладка з контентом */
+  overflow: hidden;
+  wight:200px;
+  height: 0;
+  margin: 0;
+  padding-left: 20px;
+  transition: .3s;
+}
+.accordion > label { /* Вкладака не активної мітки */
+  overflow: hidden;
+  display: block;
+  padding: 10px 0 10px 20px;
+  /* background: #aaa; */
+  color: #aaa;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  border-top: 0.1px solid #aaa;
+  /*width:50%;  Ширина контенту
+  min-width:320px; */
+}
+.accordion > :checked + label + * {/* Вкладка з контентом */
+  overflow: auto;
+  height: 245px;
+}
+.accordion > :checked + label {
+  border-top: 1.5px solid #3F51B5;
+  color: #000;
+  cursor: default;
+}
+	</style>
+</head>
+<body>
+<div align="center" class="container">
+  <div class="block">
+    <div class="accordion">
+  <input type="radio" name="tabl" id="tabl1" checked="checked"/>
+      <label for="tabl1"><b>НА ПЛОЩУ</b></label>
+  <div>
+        <!-- -->
+    <form onsubmit="return false">
+      <p>На площу</p>
+      <p align="center"><input id="areaA" oninput="calcArea()" class="calc-input" type="number" value="1.0"> м/кв</p>
+		  <p>Необхідно</p>
+      <p align="center"><output id="resultA" style="font-size:25px"></output>
+      <select id="unitA" onchange="calcArea()" class="calc-select">
+        <option value="151"> мл</option>
+        <option value="150"> гр</option>
+      </select></p>
+		 </form>
+    <!-- -->
+  </div>
+  <input type="radio" name="tabl" id="tabl2"/>
+      <label for="tabl2"><b>НА РОЗМІР</b></label>
+  <div>
+    <!-- -->
+    <form onsubmit="return false">
+      <p>На довжину <input id="longS" oninput="calcSize()" class="calc-input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="100.0" placeholder="Введіть довжину"> см</p>
+<p>та ширину <input id="widthS" oninput="calcSize()" class="calc-input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="100.0" placeholder="Введіть ширину"> см</p>
+<p align="center">Необхідно<br> <output id="resultS" style="font-size:25px"></output>
+ <select id="unitS" onchange="calcSize()" class="calc-select">
+<option value="0.0151"> мл</option>
+<option value="0.0150"> гр</option>
+</select></p>
+</form>
+    <!-- -->
+  </div>
+  <input type="radio" name="tabl" id="tabl3"/>
+  <label for="tabl3">Заголовка 13</label>
+  <div>  </div>
+</div>
+  </div>
+  <div class="block">
+    <div class="block-1">Заголовок 21<p>Текст 1</p></div>
+    <div class="block-1">Заголовок 22<p>Текст 2</p></div>
+    <div class="block-1">Заголовок 33<p>Текст 3</p></div>
+    <div class="block-1">Заголовок 44<p>Текст 4</p></div>
+  </div>
+</div>
+<!-- +++++++++++++ -->
+<p><a href="http://shpargalkablog.ru/2011/07/accordion-css.html">Source</a></p>
+</body>
+</html>
