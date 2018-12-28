@@ -1,1 +1,74 @@
-
+<DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>TEST 05</title>
+	<style>
+	/*+++++++++++++++++++++++++++++++++++++++*/
+html{
+  font-family: Arial;
+  background:#f8f8f8;
+}
+.text {
+  padding: 0 0 0 40px;
+}
+.navi {
+  position: fixed; /* Фіксоване положення */
+  height: 100%; /*Висота*/
+  width: 10px; /*Ширина*/
+  left:0; /* Відстань від лівого краю - оригінал  20%*/
+  top:0; /* Відстань від верхнього краю - оригінал  20%*/
+  padding: 10px; /* Поля навколо тексту */ 
+  background: #3F51B5; /* Колір фону */ 
+  /* border: 1px solid #333;  Параметри рамки */
+  color: #fff;
+  cursor:pointer;
+}
+.navi-show {
+  display:none;
+  position: fixed; /* Фіксоване положення */
+  height: 100%; /*Висота*/
+  width: 100px; /*Ширина*/
+  left:0; /* Відстань від лівого краю - оригінал  20%*/
+  top:0; /* Відстань від верху - оригінал  20%*/
+  background: #aaa;
+}
+.navi-show-link {
+  color:#fff;
+  border-bottom: 1px solid #3F51B5; /*  Параметри рамки */
+  padding:10px;
+}
+.navi:focus + .navi-show {
+  display:block;
+}
+.navi:hover {
+  background: #aaa;
+}
+	</style>
+</head>
+<body>
+<div>
+  <div class="navi" tabindex="1">=</div>
+  <div class="navi-show">
+    <div class="navi-show-link"><a href="https://ruseller.com">Link 1</a></div>
+    <div class="navi-show-link"><a href="">Link 2</a></div>
+    <div class="navi-show-link"><a href="">Link 3</a></div>
+    <div class="navi-show-link"><a href="">Link 4</a></div>
+    <div class="navi-show-link"><a href="">Link 5</a></div>
+    <div class="navi-show-link"><a href="">Link 6</a></div>
+    <div class="navi-show-link"><a href="">Link 7</a></div>
+    <div class="navi-show-link"><a href="">Link 8</a></div>
+    <div class="navi-show-link"><a href="">Link 9</a></div>
+    <div class="navi-show-link"><a href="https://www.google.com.ua/">Link 10</a></div>
+  </div>
+</div>
+  <div class="text"><p><a href="http://htmlbook.ru/faq/kak-zafiksirovat-sloi-chtoby-ostavalsya-na-odnom-meste">Source</a></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et dignissim augue, eu vulputate nunc. Integer varius tristique metus vel aliquam. Sed at justo nunc. Nullam eu maximus elit. Duis vitae arcu non ipsum luctus vulputate. Pellentesque ultrices enim et libero sollicitudin lacinia. Phasellus iaculis consequat lacus id aliquam. Vivamus laoreet felis nec mi hendrerit feugiat.</p>
+    <p>Integer et commodo magna. Etiam vel posuere ligula. Nam justo dui, finibus vitae viverra ut, interdum eu odio. Ut et sodales sapien. Donec a turpis massa. Maecenas a tellus id dui consequat aliquet quis a leo. Vivamus felis sapien, porttitor ut neque vel, pellentesque efficitur quam. Vivamus tincidunt viverra turpis, at lacinia dui mattis id. Mauris consectetur justo congue magna fermentum iaculis. Vestibulum malesuada interdum ultrices. Nulla posuere nunc et tellus maximus, eget vehicula neque accumsan. Maecenas scelerisque, arcu vel dictum cursus, quam sapien mollis purus, viverra congue nisi massa eu ex.</p> 
+    <p>Etiam orci orci, volutpat ut convallis pulvinar, semper in nulla. Curabitur non interdum erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus consectetur mauris non mauris euismod, nec posuere justo dignissim. Integer viverra gravida erat, vitae efficitur magna. Vivamus at auctor mi. Vestibulum vitae ligula et justo posuere facilisis ut ut nulla.</p>
+    <p>Duis vestibulum ligula in dui ornare, at viverra tellus dignissim. Cras quis libero a odio ornare scelerisque sed at turpis. Maecenas cursus efficitur tempor. Mauris consectetur non nulla non auctor. Phasellus vel nisi aliquam, egestas dui sed, venenatis nulla. Proin ut est sodales, bibendum ex at, porttitor ligula. Etiam quis neque eu arcu dapibus posuere. Fusce cursus elit sit amet sem maximus placerat. Sed vitae felis sed est euismod sodales.</p>
+    <p>Fusce et tellus quis enim sollicitudin tempor sit amet vitae ligula. Pellentesque feugiat leo neque. Ut quis tempor nunc. Mauris condimentum, mauris quis efficitur fermentum, ante lectus egestas eros, a ultrices ante velit ut risus. Etiam vel quam enim. Pellentesque ut ipsum sed arcu finibus pharetra. Pellentesque et est sapien. Nunc semper, elit quis hendrerit efficitur, leo odio ullamcorper metus, nec porta lectus enim nec nisl.</p>
+</div>
+</body>
+</html>
