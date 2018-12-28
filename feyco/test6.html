@@ -1,0 +1,208 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>TEST 06</title>
+	<style>
+	html{
+  font-family: Arial;
+  background:#f8f8f8;
+}
+/* ++++++++++ HEADER +++++++++++ */
+.header {
+  width:100%;
+  height: 50px;
+  background:#666666;
+  text-align:center;
+}
+.header-link {
+  display:inline-block;
+  color:#aaa;
+  padding:15px;
+  font-size:20px;
+}
+/* +++++++++++ menu ++++++++++++ */
+a {
+   text-decoration:none;
+}
+.hidden-menu {
+  line-height:150%; /* Міжрядковий інтервал */
+  font-size:18px; /* Розмір шрифту */
+  /* font-weight: 100; Жирний шрифт*/
+  display: block; /**/
+  position: fixed; /**/
+  list-style:none; /**/
+  padding: 30px; /**/
+  margin: 0; /**/
+  box-sizing: border-box;
+  width: 200px;
+  height: 100%;
+  background-color: #eee;
+  top: 0;
+  left: -200px;
+  transition: left .2s;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+.hidden-menu-ticker {
+  display: none;
+}
+.btn-menu {
+  color: #fff;
+  background-color: #666;
+  padding: 5px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  transition: left .23s;
+  z-index: 3;
+  width: 25px;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+.btn-menu span {
+  display: block;
+  height: 5px;
+  background-color: #fff;
+  margin: 5px 0 0;
+  transition: all .1s linear .23s;
+  position: relative;
+}
+.btn-menu span.first {
+  margin-top: 0;
+}
+.hidden-menu-ticker:checked ~ .btn-menu {
+  left: 160px;
+}
+.hidden-menu-ticker:checked ~ .hidden-menu {
+  left: 0;
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.first {
+  -webkit-transform: rotate(45deg);
+  top: 10px;
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.second {
+  opacity: 0;
+}
+.hidden-menu-ticker:checked ~ .btn-menu span.third {
+  -webkit-transform: rotate(-45deg);
+  top: -10px;
+}
+/* ++++++++++++++++++++++++++ */
+.container {
+  border: 0px solid #737373;
+  background:#fff;
+  border-radius:3px;
+}
+.block-1 {
+  background:#fff;
+  padding: 10px 20px;
+  margin:0px;
+  border-top: 1.5px solid #3F51B5;
+}
+.block {
+  display: inline-block;
+  vertical-align: top; /* Вирівнювання по верхньому краю */
+  padding:10px;
+  margin:10px;
+  width:45%;
+  min-width:100px;
+  border-radius:3px;
+  text-align:left;
+  /*box-shadow: 0 0 10px rgba(0,0,0,0.5); */
+  box-shadow: -10px 0 20px -20px #aaa, 
+               10px 0 20px -20px #aaa,
+                  0 3px 5px -1px #aaa;
+  }
+/* +++++ СТИЛІ ДЛЯ АККОРДИОНУ +++++ */
+.accordion [name="tabl"] { display: none; }
+.accordion > :not(input):not(label) { /* Вкладка з контентом */
+  overflow: hidden;
+  wight:200px;
+  height: 0;
+  margin: 0;
+  padding-left: 20px;
+  transition: .3s;
+}
+.accordion > label { /* Вкладака не активної мітки */
+  overflow: hidden;
+  display: block;
+  padding: 10px 0 10px 20px;
+  /* background: #aaa; */
+  color: #aaa;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  cursor: pointer;
+  border-top: 0.1px solid #aaa;
+  /*width:50%;  Ширина контенту
+  min-width:320px; */
+}
+.accordion > :checked + label + * {/* Вкладка з контентом */
+  overflow: auto;
+  height: 245px;
+}
+.accordion > :checked + label {
+  border-top: 1.5px solid #3F51B5;
+  color: #000;
+  cursor: default;
+}
+	</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-link"><a href="">Link 01</a></div>
+  <div class="header-link"><a href="">Link 02</a></div>
+  <div class="header-link"><a href="">Link 03</a></div>
+</div>
+<!-- ===== БОКОВА НАВІГАЦІЯ ===== -->
+<input type="checkbox" id="hmt" class="hidden-menu-ticker">
+<label class="btn-menu" for="hmt">
+  <span class="first"></span>
+  <span class="second"></span>
+  <span class="third"></span>
+</label>
+<ul class="hidden-menu">
+  <li><a href="http://www.feyco.com.ua/">Link 1</a></li>  
+  <li><a href="http://www.feyco.com.ua/methods">Link 2</a></li>
+  <li><a href="http://www.feyco.com.ua/colorcatalog">Link 3</a></li>
+  <li><a href="http://www.feyco.com.ua/colorcatalog/ralclassic">Link 4</a></li>
+  <li><a href="http://www.feyco.com.ua/colorcatalog/ncscatalog">Link 5</a></li>
+  <li><a href="http://www.feyco.com.ua/contacts">Link 6</a></li>
+  <li><a href="">Link 7</a></li>
+  <li><a href="">Link 8</a></li>
+  <li><a href="">Link 9</a></li>
+  <li><a href="https://www.mobila.name/post/53eb5a219dcff/">Source</a></li>
+</ul>
+<!-- -->
+<!-- ===== Content ===== -->
+<div align="center" class="container">
+  <div class="block">
+    <div class="accordion">
+<!-- ++++++ Label and text 1 ++++++ --> 
+    <input type="radio" name="tabl" id="tabl1" checked="checked"/>
+    <label for="tabl1"><b>Label 11</b></label>
+      <div>Text 11</div>
+<!-- ++++++ Label and text 2 ++++++ -->
+  <input type="radio" name="tabl" id="tabl2"/>
+      <label for="tabl2"><b>Label 12</b></label>
+     <div>Text 12</div>
+<!-- ++++++ Label and text 3 ++++++ -->
+  <input type="radio" name="tabl" id="tabl3"/>
+      <label for="tabl3"><b>Label 13</b></label>
+  <div>Text 13</div>
+</div>
+  </div>
+  <div class="block">
+    <div class="block-1">Label 21<p>Text 1</p></div>
+    <div class="block-1">Label 22<p>Text 2</p></div>
+    <div class="block-1">Label 33<p>Text 3</p></div>
+    <div class="block-1">Label 44<p>Text 4</p></div>
+  </div>
+</div>
+<!-- +++++++++++++ -->
+<p style="padding-left:20px"><a href="http://shpargalkablog.ru/2011/07/accordion-css.html">Source</a></p>
+</body>
+</html>
