@@ -1,0 +1,61 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Розрахунок лаку Feyco Alpocryl Klarlack 1495 HG високого глянецю</title>
+	<link href="css/styleFeyco.css" rel="stylesheet">
+	<script src="js/showContent.js"></script>
+	<script src="js/calcFeyco.js"></script>
+</head>
+<body>
+
+<div align="center">
+<!-- ======================================== -->
+<h3>Лаку Feyco Alpocryl Klarlack 1495 HG високого глянецю</h3>
+<p style="color:red">Увага! Кількість продуктів вказана тільки як RFU (Готовий до використання)</p>
+<br>
+<!-- ++++++++++++++++++++++++++++++++++++++++ -->
+    <div class="accordion">
+        <input type="radio" name="tabl" id="tabl1" checked="checked"/>
+            <label for="tabl1">НА ПЛОЩУ</label>
+            <div>
+    			<form onsubmit="return false">
+    		       	<p>На площу <input id="areaA" oninput="calcArea()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="1.0" placeholder="Введіть площу"> м/кв</p>
+    		       	<p>Необхідно <output id="resultA"></output>
+                        <select id="unitA" onchange="calcArea()" class="calc_input">
+                      	    <option value="151"> мл</option>
+                   	        <option value="150"> гр</option>
+        	            </select></p>
+    		    </form>
+    	    </div>
+        <input type="radio" name="tabl" id="tabl2"/>
+            <label for="tabl2">НА РОЗМІР</label>
+            <div>
+    		    <form onsubmit="return false">
+    		        <p>На довжину <input id="longS" oninput="calcSize()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="100.0" placeholder="Введіть площу"> см</p>
+                    <p>та ширину <input id="widthS" oninput="calcSize()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="100.0" placeholder="Введіть площу"> см</p>
+    	    	    <p>Необхідно <output id="resultS"></output>
+    	    	        <select id="unitS" onchange="calcSize()" class="calc_input">
+               	            <option value="0.0151"> мл</option>
+                   	        <option value="0.0150"> гр</option>
+                        </select></p>
+    		    </form>
+    		</div>	
+        <input type="radio" name="tabl" id="tabl3"/>
+            <label for="tabl3">НА КІЛЬКІСТЬ</label>
+            <div>
+	    	    <form onsubmit="return false;">
+    		        <p>Кількість <input id="areaU" oninput="calcUnit()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="100.0" placeholder="Ведіть кількість">
+    			    	<select id="unitU" onchange="calcUnit()" class="calc_input">
+                            <option value="151"> мл</option>
+                            <option value="150"> гр</option>
+                        </select></p>
+    			    <p>Mожливо використати на площі <output id="resultU"></output> м/кв</p>
+    		    </form>
+    		</div>
+    </div>
+<!-- ++++++++++++++++++++++++++++++++++++++++ -->
+</div>
+</body>
+</html>

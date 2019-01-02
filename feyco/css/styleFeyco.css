@@ -1,0 +1,92 @@
+html, body {
+	height: 100%;
+    width: 100%; 
+    font-family: Helvetica, Arial, sans-serif;
+ }
+ /* ================ СТИЛІ ДЛЯ АККОРДИОНУ ================= */
+.accordion [name="tabl"] { display: none; }
+.accordion > :not(input):not(label) { /* Вкладка з контентом */
+  overflow: hidden;
+  height: 0;
+  margin: 0;
+  padding-left: 20px;
+  transition: .3s;
+}
+.accordion > label { /* Вкладака не активної мітки */
+  overflow: hidden;
+  display: block;
+  padding: 10px 0 10px 20px;
+  /* background: #aaa; */
+  color: #aaa;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  border-top: 0.1px solid #aaa;
+  width:50%; /* Ширина контенту */
+  min-width:320px;
+}
+.accordion > :checked + label + * {/* Вкладка з контентом */
+  overflow: auto;
+  height: 120px;
+}
+.accordion > :checked + label {
+  border-top: 1.5px solid #3F51B5;
+  color: #000;
+  cursor: default;
+}
+ 
+ /**/
+ .ac-container{ /* Весь контейнер аккордіону*/
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    max-width: 450px;
+    width: 100%;
+    margin: 10px auto 30px auto;
+}
+.ac-container label{ /* Ярлик назви блоку */
+    border-bottom: 0.5px solid #EBEBEB;
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: #737373;
+    line-height: 33px;
+    font-size: 18px;
+}
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
+    border-bottom: 1.5px solid #3F51B5;
+    color: #000; /* Колір тексту при виборі */
+}
+.ac-container input{
+   display: none;
+}
+.ac-container article{ /* Блок з контентом? */
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: -1px;
+    overflow: hidden;
+    height: 0px;
+    position: relative;
+    z-index: 10;
+  /* Повільна анімація зсуву блоку аккордіон */
+    -webkit-transition: height 0.3s ease-in-out;
+    -moz-transition: height 0.3s ease-in-out;
+    -o-transition: height 0.3s ease-in-out;
+    -ms-transition: height 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out;
+}
+.ac-container input:checked ~ article {
+    -webkit-transition: height 0.3s ease-in-out;
+    -moz-transition: height 0.3s ease-in-out;
+    -o-transition: height 0.3s ease-in-out;
+    -ms-transition: height 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out;
+    height: auto; /* Висота блоку з контентом. Будь які значення, крім "рх" виключають анімацію*/
+}
+.ac-container article p { /* Блоки з текстом */
+    color: #000;
+    line-height: 20px;
+    font-size: 16px;
+    padding: 20px;
+}

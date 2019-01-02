@@ -1,0 +1,41 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Розрахунок продуктів Feyco</title>
+	<!-- <link href="css/styleFeyco.css" rel="stylesheet"> -->
+	<script src="js/showContent.js"></script>
+	<script src="js/calcFeyco.js"></script>
+</head>
+<body>
+<div ><!-- align="center" -->
+    <div class="site-wrap">
+	<!-- ===================================== -->
+    <h2 style="text-align:center">Розрахувати 
+<select style="width:150px;height:20px;font-size:16px;position:auto"><!-- ОРИГІНАЛ <select onchange="if (this.value) window.location.href = this.value"> -->
+    <option value="">Виберіть:</option>
+    <option value="" onClick="showContent('feyco_01_153.html')">Feyco 153</option>
+    <option value="" onClick="showContent('feyco_02_1070.html')">Feyco 1070</option>
+	<option value="" onClick="showContent('feyco_03_1090.html')">Feyco 1090</option>
+	<option value="" onClick="showContent('feyco_04_2242.html')">Feyco 2242</option>
+	<option value="" onClick="showContent('feyco_05_3910.html')">Feyco 3910</option>
+	<option value="" onClick="showContent('feyco_06_5020.html')">Feyco 5020</option>
+	<option value="" onClick="showContent('feyco_07_le.html')">Feyco LE</option>
+	<option value="" onClick="showContent('feyco_08_sp.html')">Feyco SP</option>
+	<option value="" onClick="showContent('feyco_09_1485.html')">Feyco 1485</option>
+	<option value="" onClick="showContent('feyco_10_1495.html')">Feyco 1495</option>
+</select></h2>
+    <div id="content">
+    <!-- CONTENT -->
+    </div> 
+    <div id="loading" style="display: none"> 
+        Йде завантаження... 
+    </div> 
+    <script>
+        showContent('feyco_01_153.html')
+    </script>
+</div>
+</div>
+</body>
+</html>
