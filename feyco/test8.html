@@ -1,0 +1,66 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Розрахунок фарби Feyco Alpocryl Emaillack LE</title>
+	<link href="css/styleFeyco.css" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript" language="javascript">
+	function calcArea(){
+    var result = 1;
+    var areaA = document.getElementById('areaA').value;
+    var unitA = document.getElementById('unitA').options[document.getElementById('unitA').selectedIndex].value;
+    result *= parseFloat(areaA)||0;
+    result *= parseFloat(unitA)||0; 
+    document.getElementById('resultA').innerHTML = result.toFixed(1);
+
+    rezultat1 = parseFloat(document.getElementById('areaA').value) * 102 / 1.4;
+	rezultat2 = parseFloat(document.getElementById('areaA').value) * 102 / 1.4 * 0.1;	
+	rezultat3 = parseFloat(document.getElementById('areaA').value) * 102 / 1.4 * 0.3;
+	
+    document.getElementById('rezultat1').innerHTML = rezultat1.toFixed(2) + " мл";
+    document.getElementById('rezultat2').innerHTML = rezultat2.toFixed(2) + " мл";
+	document.getElementById('rezultat3').innerHTML = rezultat3.toFixed(2) + " мл";
+	
+	var cost = 1;
+	rezultat4 = parseFloat(document.getElementById('areaA').value) * 102 * 0.0255;
+	document.getElementById('rezultat4').innerHTML = "Вартість суміші (RFU) " + rezultat4.toFixed(2) + " Euro" + "<br>" + "Без врахування тари та персональних умов!";
+}
+</script>
+<div align="center">
+<!-- ======================================== -->
+<h3>Фарби Feyco Alpocryl Emaillack LE</h3>
+<h4 style="color:red">Теоретична кількість без урахування можливих факторів!</h4>
+<!-- ======================================== -->
+	<form onsubmit="return false">
+		<p>На площу <input id="areaA" oninput="calcArea()" class="calc_input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" value="1.0" placeholder="Введіть площу"> м/кв</p>
+		<p>Необхідно <output id="resultA"></output>
+            <select id="unitA" onchange="calcArea()" class="calc_input">
+           	    <option value="102"> мл</option>
+               	<option value="120"> гр</option>
+   	        </select></p>				
+    	<hr>
+        <h3>Детально</h3>
+        <table>		
+            <tr>
+        	    <td>Фарба LE</td>
+        		<td align="right"><output id="rezultat1"></output></td>
+        	</tr>
+			
+        	<tr>
+        	    <td>Затверджувач H901</td>
+        		<td align="right"><output id="rezultat2"></output></td>
+        	</tr>
+        	<tr>
+        	    <td>Розріджувач V095</td>
+        		<td align="right"><output id="rezultat3"></output></td>
+        	</tr>
+        </table>
+		<hr>
+	</form>
+<p><output id="rezultat4"></output></p>
+</div>
+</body>
+</html>
