@@ -29,7 +29,29 @@
                 for (var i=0; i<sel.length; i++)  {sel[i].onchange()}               }
         }
     </script>
-	<style>
+	<script>
+// схавает пустоту, элемент, или коллекцию элементов.
+function CheckboxCollection (checkboxes) {
+    this.checkboxes = checkboxes ? "nodeType" in checkboxes ? [checkboxes] : Array.prototype.slice.call(checkboxes) : [];
+}
+
+// checkboxes = [ /* чекбокс1, чекбокс2, ..., чекбоксN */ ]; <--- массив элементов.
+
+// вернёт собранные в массив значения отмеченных чекбоксов.
+CheckboxCollection.prototype.collectValues = function () {
+
+    var i = this.checkboxes.length, buffer = [];
+    
+    while (i--) {
+        if (this.checkboxes[i].checked) {
+            buffer.push(this.checkboxes[i].value);
+        }
+    }
+    
+    return buffer;
+};
+</script>
+<style>
 .modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
@@ -108,21 +130,22 @@ td {
 
 	</style>
 </head>
-<body style="">
+<body>
 <div style="margin:auto;width:100%;max-width:650px;background:#FFF">
 <!-- *************************** ТАБЛИЦЯ ****************************** -->
  <table id="sf" cellpadding="0" cellspacing="0" align="center">
 	<tbody>
 		<tr>
 			<td><input type="button" value="СКИНУТИ" class="res"></td>
-            <td colspan="2">Використовуйте<br>фільтри вибору для<br>зменшення списку</td>
+            <td colspan="4">Використовуйте<br>фільтри вибору для<br>зменшення списку</td>
             <td><!--<a href="#openModal" class="res" style="text-decoration:none">ДОВІДКА</a>-->+</td>
         </tr>
 		<!-- ********************* COMMENT ********************* -->
 		<tr>
-		    <th style="text-align:right;font-size:12px;color:gray" colspan="4">Створено Самосуд Ю.М</th>
+		    <th style="text-align:right;font-size:12px;color:gray" colspan="6">Створено Самосуд Ю.М</th>
         </tr>
         <tr align="center">
+		    <th></th>
             <th>
                 <select class="select">
                     <option value="">CPSM</option>
@@ -285,184 +308,406 @@ td {
 					<option value="17">17</option>
                 </select>
 			</th>
+			<th>Показати</th>
         </tr>
 		
 <!-- ********** 20-24 ГРУНТ-НАПОВНЮВАЧ, СІРИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1 ************************** -->
 
-        <tr class="cursor" onClick="document.location='#openModal1'">
+        <tr>
+		    <td><input type="checkbox" name="cps2m-1" value="CPS2M-№1" id="cps2m-1"></td>
 		    <td>8</td><td>1</td><td class="gray">-</td><td class="gray">-</td>
+			<td class="cursor" onClick="document.location='#openModal1'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal2'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-2" value="CPS2M-№2" id="cps2m-2"></td>
 		    <td>9</td><td>2</td><td class="gray">-</td><td class="gray">-</td>
+			<td class="cursor" onClick="document.location='#openModal2'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal3'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-3" value="CPS2M-№3" id="cps2m-3"></td>
 		    <td>10</td><td>3</td><td class="gray">-</td><td class="gray">-</td>
+			<td class="cursor" onClick="document.location='#openModal3'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal4'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-4" value="CPS2M-№4" id="cps2m-4"></td>
 		    <td>11</td><td>4</td><td class="gray">-</td><td class="gray">-</td>
+			<td class="cursor" onClick="document.location='#openModal4'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal5'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-5" value="CPS2M-№5" id="cps2m-5"></td>
 		    <td>12</td><td>5</td><td>-</td><td>-</td>
+			<td class="cursor" onClick="document.location='#openModal5'">i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal6'">
+		    <td><input type="checkbox" name="cps2m-6" value="CPS2M-№6" id="cps2m-6"></td>
 		    <td>13</td><td>6</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal7'">
+		    <td><input type="checkbox" name="cps2m-7" value="CPS2M-№7" id="cps2m-7"></td>
 		    <td>14</td><td>7</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal8'">
+		    <td><input type="checkbox" name="cps2m-8" value="CPS2M-№8" id="cps2m-8"></td>
 		    <td>15</td><td>8</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal9'">
+		    <td><input type="checkbox" name="cps2m-9" value="CPS2M-№9" id="cps2m-9"></td>
 		    <td>16</td><td>9</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal10'">
+		    <td><input type="checkbox" name="cps2m-10" value="CPS2M-№10" id="cps2m-10"></td>
 		    <td>17</td><td>10</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal11'">
+		    <td><input type="checkbox" name="cps2m-11" value="CPS2M-№11" id="cps2m-11"></td>
 		    <td>18</td><td>11</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal12'">
+		    <td><input type="checkbox" name="cps2m-12" value="CPS2M-№12" id="cps2m-12"></td>
 		    <td>19</td><td>12</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal13'">
+		    <td><input type="checkbox" name="cps2m-13" value="CPS2M-№13" id="cps2m-13"></td>
 		    <td>20</td><td>13</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal14'">
+		    <td><input type="checkbox" name="cps2m-14" value="CPS2M-№14" id="cps2m-14"></td>
 		    <td>21</td><td>14</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal15'">
+		    <td><input type="checkbox" name="cps2m-15" value="CPS2M-№15" id="cps2m-15"></td>
 		    <td>22</td><td>15</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal16'">
+		    <td><input type="checkbox" name="cps2m-16" value="CPS2M-№16" id="cps2m-16"></td>
 		    <td>23</td><td>16</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal17'">
+		    <td><input type="checkbox" name="cps2m-17" value="CPS2M-№17" id="cps2m-17"></td>
 		    <td>24</td><td>17</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal18'">
+		    <td><input type="checkbox" name="cps2m-18" value="CPS2M-№18" id="cps2m-18"></td>
 		    <td>25</td><td>18</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal19'">
+		    <td><input type="checkbox" name="cps2m-19" value="CPS2M-№19" id="cps2m-19"></td>
 		    <td>26</td><td>19</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal20'">
+		    <td><input type="checkbox" name="cps2m-20" value="CPS2M-№20" id="cps2m-20"></td>
 		    <td>27</td><td>20</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal21'">
+		    <td><input type="checkbox" name="cps2m-21" value="CPS2M-№21" id="cps2m-21"></td>
 		    <td>28</td><td>21</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal22'">
+		    <td><input type="checkbox" name="cps2m-22" value="CPS2M-№22" id="cps2m-22"></td>
 		    <td>29</td><td>22</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal23'">
+		    <td><input type="checkbox" name="cps2m-23" value="CPS2M-№23" id="cps2m-23"></td>
 		    <td>30</td><td>23</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal24'">
+		    <td><input type="checkbox" name="cps2m-24" value="CPS2M-№24" id="cps2m-24"></td>
 		    <td>31</td><td>24</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal25'">
+		    <td><input type="checkbox" name="cps2m-25" value="CPS2M-№25" id="cps2m-25"></td>
 		    <td>32</td><td>25</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal26'">
+		    <td><input type="checkbox" name="cps2m-26" value="CPS2M-№26" id="cps2m-26"></td>
 		    <td>33</td><td>26</td><td>-</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal27'">
+		    <td><input type="checkbox" name="cps2m-27" value="CPS2M-№27" id="cps2m-27"></td>
 		    <td>34</td><td>27</td><td>1</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal28'">
+		    <td><input type="checkbox" name="cps2m-28" value="CPS2M-№28" id="cps2m-28"></td>
 		    <td>35</td><td>28</td><td>2</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal29'">
+		    <td><input type="checkbox" name="cps2m-29" value="CPS2M-№29" id="cps2m-29"></td>
 		    <td>36</td><td>29</td><td>3</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal30'">
+		    <td><input type="checkbox" name="cps2m-30" value="CPS2M-№30" id="cps2m-30"></td>
 		    <td>37</td><td>30</td><td>4</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal31'">
+		    <td><input type="checkbox" name="cps2m-31" value="CPS2M-№31" id="cps2m-31"></td>
 		    <td>38</td><td>31</td><td>5</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal32'">
+		    <td><input type="checkbox" name="cps2m-32" value="CPS2M-№32" id="cps2m-32"></td>
 		    <td>39</td><td>32</td><td>6</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal33'">
+		    <td><input type="checkbox" name="cps2m-33" value="CPS2M-№33" id="cps2m-33"></td>
 		    <td>40</td><td>33</td><td>7</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal34'">
+		    <td><input type="checkbox" name="cps2m-34" value="CPS2M-№34" id="cps2m-34"></td>
 		    <td>-</td><td>34</td><td>8</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal35'">
+		    <td><input type="checkbox" name="cps2m-35" value="CPS2M-№35" id="cps2m-35"></td>
 		    <td>-</td><td>35</td><td>9</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal36'">
+		    <td><input type="checkbox" name="cps2m-36" value="CPS2M-№36" id="cps2m-36"></td>
 		    <td>-</td><td>36</td><td>10</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal37'">
+		    <td><input type="checkbox" name="cps2m-37" value="CPS2M-№37" id="cps2m-37"></td>
 		    <td>-</td><td>37</td><td>11</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal38'">
+		    <td><input type="checkbox" name="cps2m-38" value="CPS2M-№38" id="cps2m-38"></td>
 		    <td>-</td><td>38</td><td>12</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal39'">
+		    <td><input type="checkbox" name="cps2m-39" value="CPS2M-№39" id="cps2m-39"></td>
 		    <td>-</td><td>39</td><td>13</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal40'">
+		    <td><input type="checkbox" name="cps2m-40" value="CPS2M-№40" id="cps2m-40"></td>
 		    <td>-</td><td>40</td><td>14</td><td>-</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal41'">
+		    <td><input type="checkbox" name="cps2m-41" value="CPS2M-№41" id="cps2m-41"></td>
 		    <td>-</td><td>41</td><td>15</td><td>1</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal42'">
+		    <td><input type="checkbox" name="cps2m-42" value="CPS2M-№42" id="cps2m-42"></td>
 		    <td>-</td><td>42</td><td>16</td><td>2</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal43'">
+		    <td><input type="checkbox" name="cps2m-43" value="CPS2M-№43" id="cps2m-43"></td>
 		    <td>-</td><td>43</td><td>17</td><td>3</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal44'">
+		    <td><input type="checkbox" name="cps2m-44" value="CPS2M-№44" id="cps2m-44"></td>
 		    <td>-</td><td>44</td><td>18</td><td>4</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal45'">
+		    <td><input type="checkbox" name="cps2m-45" value="CPS2M-№45" id="cps2m-45"></td>
 		    <td>-</td><td>45</td><td>19</td><td>5</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal46'">
+		    <td><input type="checkbox" name="cps2m-46" value="CPS2M-№46" id="cps2m-46"></td>
 		    <td>-</td><td>46</td><td>20</td><td>6</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal47'">
+		    <td><input type="checkbox" name="cps2m-47" value="CPS2M-№47" id="cps2m-47"></td>
 		    <td>-</td><td>47</td><td>21</td><td>7</td>
+			<td>i</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal48'">
+		    <td><input type="checkbox" name="cps2m-48" value="CPS2M-№48" id="cps2m-48"></td>
 		    <td>-</td><td>48</td><td>22</td><td>8</td>
+			<td>i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal49'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-49" value="CPS2M-№49" id="cps2m-49"></td>
 		    <td>-</td><td>49</td><td>23</td><td>9</td>
+			<td class="cursor" onClick="document.location='#openModal49'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal50'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-50" value="CPS2M-№50" id="cps2m-50"></td>
 		    <td>-</td><td>50</td><td>24</td><td>10</td>
+			<td class="cursor" onClick="document.location='#openModal50'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal51'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-51" value="CPS2M-№51" id="cps2m-51"></td>
 		    <td>-</td><td>51</td><td>25</td><td>11</td>
+			<td class="cursor" onClick="document.location='#openModal51'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal52'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-52" value="CPS2M-№52" id="cps2m-52"></td>
 		    <td>-</td><td>52</td><td>26</td><td>12</td>
+			<td class="cursor" onClick="document.location='#openModal52'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal53'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-53" value="CPS2M-№53" id="cps2m-53"></td>
 		    <td>-</td><td>53</td><td>27</td><td>13</td>
+			<td class="cursor" onClick="document.location='#openModal53'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal54'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-54" value="CPS2M-№54" id="cps2m-54"></td>
 		    <td>-</td><td>54</td><td>28</td><td>14</td>
+			<td class="cursor" onClick="document.location='#openModal54'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal55'">
+		<tr>
+		    <td><input type="checkbox" name="cps2m-55" value="CPS2M-№55" id="cps2m-55"></td>
 		    <td>-</td><td>55</td><td>29</td><td>15</td>
+			<td class="cursor" onClick="document.location='#openModal55'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal56'">
-		    <td>-</td><td>56</td><td>30</td><td>16</td>
+		<tr>
+		    <td><input type="checkbox" name="cps2m-56" value="CPS2M-№56" id="cps2m-56"></td>
+			<td>-</td><td>56</td><td>30</td><td>16</td>
+			<td class="cursor" onClick="document.location='#openModal56'">i</td>
 		</tr>
-		<tr class="cursor" onClick="document.location='#openModal57'">
-		    <td>-</td><td>57</td><td>31</td><td>17</td>
+		<tr>
+		    <td><input type="checkbox" name="cps2m-57" value="CPS2M-№57" id="cps2m-57"></td>
+			<td>-</td><td>57</td><td>31</td><td>17</td>
+			<td class="cursor" onClick="document.location='#openModal57'">i</td>
 		</tr>
     </tbody>
 </table>
+<!-- ++++++++++++++++++++++ -->
+
+<!-- ++++++++++++++++++++++ -->
+
+<h2>Коментарі для друку:</h2>
+<div id="printableArea">
+ <textarea id="output"  name="comment" cols="80" rows="5"></textarea>
 </div>
+<button id="clear">Очистити</button>
+<button onclick="printDiv('printableArea')">Друкувати</button>
+</div>
+<!-- ++++++++++++++++++++++ -->
+<script>
+function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
+<!-- ++++++++++++++++++++++ -->
+<!-- ********************************************* -->
+<script>
+// коллекция чекбоксов.
+var myBoxes = new CheckboxCollection();
+
+// чекбоксы можно добавить так.
+myBoxes.checkboxes.push(document.getElementById("cps2m-1"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-2"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-3"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-4"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-5"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-6"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-7"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-8"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-9"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-10"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-11"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-12"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-13"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-14"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-15"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-16"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-17"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-18"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-19"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-20"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-21"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-22"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-23"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-24"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-25"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-26"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-27"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-28"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-29"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-30"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-31"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-32"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-33"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-34"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-35"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-36"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-37"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-38"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-39"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-40"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-41"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-42"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-43"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-44"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-45"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-46"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-47"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-48"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-49"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-50"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-51"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-52"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-53"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-54"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-55"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-56"));
+myBoxes.checkboxes.push(document.getElementById("cps2m-57"));
+
+// куда выводим.
+var output = document.getElementById("output");
+
+// клик по кнопке "очистить"
+document.getElementById("clear").onclick = function () {
+    output.value = "";
+};
+
+// функция вывода.
+function out () {
+    output.value = myBoxes.collectValues().join(", ");
+}
+
+// обработка изменения чекбоксов.
+for (var i = 0; i < myBoxes.checkboxes.length; i++) {
+    myBoxes.checkboxes[i].onchange = out;
+}
+</script>
+<!-- ********************************************* -->
 <div>
 <!-- ============= ДОВІДКА (МОДАЛ-1) ============= -->
 <div id="openModal1" class="modalDialog">
