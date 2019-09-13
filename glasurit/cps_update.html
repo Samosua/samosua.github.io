@@ -30,13 +30,14 @@
         }
     </script>
 	<style>
-	.modalDialog {
+.modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+	text-align:center;
 	background: rgba(0,0,0,0.8);
 	z-index: 99999;
 	-webkit-transition: opacity 400ms ease-in;
@@ -82,25 +83,47 @@
 }
 
 .close:hover { background: #FF0000; }
-<!-- -->
+<!-- СТИЛІ ДЛЯ ТАБЛИЦІ -->
 .gray {
 color: gray;
 }
+
+table {
+  font-family: "Arial", Sans-Serif;
+  border-collapse: collapse;
+  color: #686461;
+  width:100%;
+  text-align:center;
+}
+th {
+  /*border-bottom: 3px solid #B9B29F;*/
+  padding: 10px;
+  text-align: center;
+  background: #fff000;
+}
+td {
+  padding: 10px;
+  border-top: 1px solid grey;
+}
+
 	</style>
 </head>
 <body style="">
-<div style="margin:auto;width:100%;background:#FFF">
-<hr>
+<div style="margin:auto;width:100%;max-width:650px;background:#FFF">
 <!-- *************************** ТАБЛИЦЯ ****************************** -->
- <table id="sf" border="1" cellpadding="12" cellspacing="0" align="center" style="max-width:1050px;background:#FFF;text-align:center">
+ <table id="sf" cellpadding="0" cellspacing="0" align="center">
 	<tbody>
 		<tr>
 			<td><input type="button" value="СКИНУТИ" class="res"></td>
             <td colspan="2">Використовуйте<br>фільтри вибору для<br>зменшення списку</td>
             <td><!--<a href="#openModal" class="res" style="text-decoration:none">ДОВІДКА</a>-->+</td>
         </tr>
+		<!-- ********************* COMMENT ********************* -->
+		<tr>
+		    <th style="text-align:right;font-size:12px;color:gray" colspan="4">Створено Самосуд Ю.М</th>
+        </tr>
         <tr align="center">
-            <td>
+            <th>
                 <select class="select">
                     <option value="">CPSM</option>
                     <option value="">Всі</option>
@@ -138,8 +161,8 @@ color: gray;
 					<option value="39">39</option>
 					<option value="40">40</option>
                 </select>
-            </td>
-            <td>
+            </th>
+            <th>
                 <select class="select">
                     <option value="">CPS2M</option>
                     <option value="">Всі</option>
@@ -201,8 +224,8 @@ color: gray;
 					<option value="56">56</option>
 					<option value="57">57</option>
                 </select>
-            </td>
-			<td>
+            </th>
+			<th>
                 <select class="select">
                     <option value="">CPS3M</option>
                     <option value="">Всі</option>
@@ -238,8 +261,8 @@ color: gray;
 					<option value="30">30</option>
 					<option value="31">31</option>
                 </select>
-            </td>
-			<td>
+            </th>
+			<th>
                 <select class="select">
                     <option value="">CPS4M</option>
                     <option value="">Всі</option>
@@ -261,231 +284,724 @@ color: gray;
 					<option value="16">16</option>
 					<option value="17">17</option>
                 </select>
-			</td>
+			</th>
         </tr>
 		
 <!-- ********** 20-24 ГРУНТ-НАПОВНЮВАЧ, СІРИЙ. ДЛЯ ШЛІФУВАННЯ 4:1:1 ************************** -->
 
         <tr class="cursor" onClick="document.location='#openModal1'">
-		    <td>8</td><td>1</td><td class="gray">---</td><td class="gray">---</td>
+		    <td>8</td><td>1</td><td class="gray">-</td><td class="gray">-</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal2'">
-		    <td>9</td><td>2</td><td class="gray">---</td><td class="gray">---</td>
+		    <td>9</td><td>2</td><td class="gray">-</td><td class="gray">-</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal3'">
-		    <td>10</td><td>3</td><td class="gray">---</td><td class="gray">---</td>
+		    <td>10</td><td>3</td><td class="gray">-</td><td class="gray">-</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal4'">
-		    <td>11</td><td>4</td><td class="gray">---</td><td class="gray">---</td>
+		    <td>11</td><td>4</td><td class="gray">-</td><td class="gray">-</td>
 		</tr>
 		<tr class="cursor" onClick="document.location='#openModal5'">
-		    <td>12</td><td>5</td><td>X</td><td>X</td>
+		    <td>12</td><td>5</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>13</td><td>6</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal6'">
+		    <td>13</td><td>6</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>14</td><td>7</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal7'">
+		    <td>14</td><td>7</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>15</td><td>8</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal8'">
+		    <td>15</td><td>8</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>16</td><td>9</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal9'">
+		    <td>16</td><td>9</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>17</td><td>10</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal10'">
+		    <td>17</td><td>10</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>18</td><td>11</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal11'">
+		    <td>18</td><td>11</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>19</td><td>12</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal12'">
+		    <td>19</td><td>12</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>20</td><td>13</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal13'">
+		    <td>20</td><td>13</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>21</td><td>14</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal14'">
+		    <td>21</td><td>14</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>22</td><td>15</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal15'">
+		    <td>22</td><td>15</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>23</td><td>16</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal16'">
+		    <td>23</td><td>16</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>24</td><td>17</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal17'">
+		    <td>24</td><td>17</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>25</td><td>18</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal18'">
+		    <td>25</td><td>18</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>26</td><td>19</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal19'">
+		    <td>26</td><td>19</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>27</td><td>20</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal20'">
+		    <td>27</td><td>20</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>28</td><td>21</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal21'">
+		    <td>28</td><td>21</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>29</td><td>22</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal22'">
+		    <td>29</td><td>22</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>30</td><td>23</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal23'">
+		    <td>30</td><td>23</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>31</td><td>24</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal24'">
+		    <td>31</td><td>24</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>32</td><td>25</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal25'">
+		    <td>32</td><td>25</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>33</td><td>26</td><td>X</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal26'">
+		    <td>33</td><td>26</td><td>-</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>34</td><td>27</td><td>1</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal27'">
+		    <td>34</td><td>27</td><td>1</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>35</td><td>28</td><td>2</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal28'">
+		    <td>35</td><td>28</td><td>2</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>36</td><td>29</td><td>3</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal29'">
+		    <td>36</td><td>29</td><td>3</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>37</td><td>30</td><td>4</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal30'">
+		    <td>37</td><td>30</td><td>4</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>38</td><td>31</td><td>5</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal31'">
+		    <td>38</td><td>31</td><td>5</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>39</td><td>32</td><td>6</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal32'">
+		    <td>39</td><td>32</td><td>6</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>40</td><td>33</td><td>7</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal33'">
+		    <td>40</td><td>33</td><td>7</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>34</td><td>8</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal34'">
+		    <td>-</td><td>34</td><td>8</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>35</td><td>9</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal35'">
+		    <td>-</td><td>35</td><td>9</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>36</td><td>10</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal36'">
+		    <td>-</td><td>36</td><td>10</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>37</td><td>11</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal37'">
+		    <td>-</td><td>37</td><td>11</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>38</td><td>12</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal38'">
+		    <td>-</td><td>38</td><td>12</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>39</td><td>13</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal39'">
+		    <td>-</td><td>39</td><td>13</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>40</td><td>14</td><td>X</td>
+		<tr class="cursor" onClick="document.location='#openModal40'">
+		    <td>-</td><td>40</td><td>14</td><td>-</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>41</td><td>15</td><td>1</td>
+		<tr class="cursor" onClick="document.location='#openModal41'">
+		    <td>-</td><td>41</td><td>15</td><td>1</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>42</td><td>16</td><td>2</td>
+		<tr class="cursor" onClick="document.location='#openModal42'">
+		    <td>-</td><td>42</td><td>16</td><td>2</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>43</td><td>17</td><td>3</td>
+		<tr class="cursor" onClick="document.location='#openModal43'">
+		    <td>-</td><td>43</td><td>17</td><td>3</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>44</td><td>18</td><td>4</td>
+		<tr class="cursor" onClick="document.location='#openModal44'">
+		    <td>-</td><td>44</td><td>18</td><td>4</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>45</td><td>19</td><td>5</td>
+		<tr class="cursor" onClick="document.location='#openModal45'">
+		    <td>-</td><td>45</td><td>19</td><td>5</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>46</td><td>20</td><td>6</td>
+		<tr class="cursor" onClick="document.location='#openModal46'">
+		    <td>-</td><td>46</td><td>20</td><td>6</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>47</td><td>21</td><td>7</td>
+		<tr class="cursor" onClick="document.location='#openModal47'">
+		    <td>-</td><td>47</td><td>21</td><td>7</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>48</td><td>22</td><td>8</td>
+		<tr class="cursor" onClick="document.location='#openModal48'">
+		    <td>-</td><td>48</td><td>22</td><td>8</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>49</td><td>23</td><td>9</td>
+		<tr class="cursor" onClick="document.location='#openModal49'">
+		    <td>-</td><td>49</td><td>23</td><td>9</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>50</td><td>24</td><td>10</td>
+		<tr class="cursor" onClick="document.location='#openModal50'">
+		    <td>-</td><td>50</td><td>24</td><td>10</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>51</td><td>25</td><td>11</td>
+		<tr class="cursor" onClick="document.location='#openModal51'">
+		    <td>-</td><td>51</td><td>25</td><td>11</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>52</td><td>26</td><td>12</td>
+		<tr class="cursor" onClick="document.location='#openModal52'">
+		    <td>-</td><td>52</td><td>26</td><td>12</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>53</td><td>27</td><td>13</td>
+		<tr class="cursor" onClick="document.location='#openModal53'">
+		    <td>-</td><td>53</td><td>27</td><td>13</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>54</td><td>28</td><td>14</td>
+		<tr class="cursor" onClick="document.location='#openModal54'">
+		    <td>-</td><td>54</td><td>28</td><td>14</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>55</td><td>29</td><td>15</td>
+		<tr class="cursor" onClick="document.location='#openModal55'">
+		    <td>-</td><td>55</td><td>29</td><td>15</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>56</td><td>30</td><td>16</td>
+		<tr class="cursor" onClick="document.location='#openModal56'">
+		    <td>-</td><td>56</td><td>30</td><td>16</td>
 		</tr>
-		<tr class="cursor" onClick="">
-		    <td>X</td><td>57</td><td>31</td><td>17</td>
+		<tr class="cursor" onClick="document.location='#openModal57'">
+		    <td>-</td><td>57</td><td>31</td><td>17</td>
 		</tr>
-<!-- ********************* COMMENT ********************* -->
-		<tr>
-		    <td style="text-align:right;font-size:12px;color:gray" colspan="4">Створено Самосуд Ю.М</td>
-        </tr>
     </tbody>
 </table>
 </div>
-<!-- ====================================  ДОВІДКА (МОДАЛ-1) ===================================== -->
+<div>
+<!-- ============= ДОВІДКА (МОДАЛ-1) ============= -->
 <div id="openModal1" class="modalDialog">
 	<div>
 		<a href="#close" title="Закрыть" class="close">+</a>
-		<h2 align="center">Доповнення<br>Color Profi Metallic</h2>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
 		<hr><p><b>CPSM №8:</b></br>7*05*10.50</br>6*11*38.93</br>5*15*35.80</p><hr>
 		    <p><b>CPS2M №1:</b></br>MA172.83<br>MB883.90<br>MR398.600</p>
 	</div>
 </div>
-<!-- ====================================  ДОВІДКА (МОДАЛ-2) ===================================== -->
+<!-- ============= ДОВІДКА (МОДАЛ-2) ============= -->
 <div id="openModal2" class="modalDialog">
 	<div>
 		<a href="#close" title="Закрыть" class="close">+</a>
-		<h2 align="center">Доповнення<br>Color Profi Metallic</h2>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
 		<hr><p><b>CPSM №9:</b></br>1*01*18.90<br>5*15*38.38<br>9*01*28.40</p><hr>
 		    <p><b>CPS2M №2:</b></br>MA167.25<br>MB872.90<br>MR396.00</p>
 	</div>
 </div>
-<!-- ====================================  ДОВІДКА (МОДАЛ-3) ===================================== -->
+<!-- ============= ДОВІДКА (МОДАЛ-3) ============= -->
 <div id="openModal3" class="modalDialog">
 	<div>
 		<a href="#close" title="Закрыть" class="close">+</a>
-		<h2 align="center">Доповнення<br>Color Profi Metallic</h2>
-		<hr><p>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №10:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №3:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
 	</div>
 </div>
-<!-- ====================================  ДОВІДКА (МОДАЛ-4) ===================================== -->
+<!-- ============= ДОВІДКА (МОДАЛ-4) ============= -->
 <div id="openModal4" class="modalDialog">
 	<div>
 		<a href="#close" title="Закрыть" class="close">+</a>
-		<h2 align="center">Доповнення<br>Color Profi Metallic</h2>
-		<hr><p>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №11:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №4:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
 	</div>
 </div>
-<!-- ====================================  ДОВІДКА (МОДАЛ-5) ===================================== -->
+<!-- ============= ДОВІДКА (МОДАЛ-5) ============= -->
 <div id="openModal5" class="modalDialog">
 	<div>
 		<a href="#close" title="Закрыть" class="close">+</a>
-		<h2 align="center">Доповнення<br>Color Profi Metallic</h2>
-		<hr><p>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №12:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №5:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-6) ============= -->
+<div id="openModal6" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №13:</b></br>1*01*18.90<br>5*15*38.38<br>9*01*28.40</p><hr>
+		    <p><b>CPS2M №6:</b></br>MA167.25<br>MB872.90<br>MR396.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-7) ============= -->
+<div id="openModal7" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №14:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №7:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-8) ============= -->
+<div id="openModal8" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №15:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №8:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-9) ============= -->
+<div id="openModal9" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №16:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №9:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-10) ============= -->
+<div id="openModal10" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №17:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №10:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-11) ============= -->
+<div id="openModal11" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №18:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №11:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-12) ============= -->
+<div id="openModal12" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №19:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №12:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-13) ============= -->
+<div id="openModal13" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №20:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №13:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-14) ============= -->
+<div id="openModal14" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №21:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №14:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-15) ============= -->
+<div id="openModal15" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №22:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №15:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-16) ============= -->
+<div id="openModal16" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №23:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №16:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-17) ============= -->
+<div id="openModal17" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №24:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №17:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-18) ============= -->
+<div id="openModal18" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №25:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №18:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-19) ============= -->
+<div id="openModal19" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №26:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №19:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-20) ============= -->
+<div id="openModal20" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №27:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №20:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-21) ============= -->
+<div id="openModal21" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №28:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №21:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-22) ============= -->
+<div id="openModal22" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №29:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №22:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-23) ============= -->
+<div id="openModal23" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №30:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №23:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-24) ============= -->
+<div id="openModal24" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №31:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №24:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-25) ============= -->
+<div id="openModal25" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №32:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №25:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-26) ============= -->
+<div id="openModal26" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №33:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №26:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
 	</div>
 </div>
 
+<!-- ============= ДОВІДКА (МОДАЛ-27) ============= -->
+<div id="openModal27" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №34:</b></br>1*01*39.31<br>5*13*41.53<br>7*08*44.35</p><hr>
+		    <p><b>CPS2M №27:</b></br>MA012.03<br>MA936.10<br>MB983.75</p><hr>
+			<p><b>CPS3M №1:</b></br>MA012.03<br>MA936.10<br>MB983.75</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-28) ============= -->
+<div id="openModal28" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №35:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №28:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №2:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-29) ============= -->
+<div id="openModal29" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №36:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №29:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №3:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-30) ============= -->
+<div id="openModal30" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №37:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №30:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №4:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-31) ============= -->
+<div id="openModal31" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №38:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №31:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №5:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-32) ============= -->
+<div id="openModal32" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №39:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №32:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №6:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-33) ============= -->
+<div id="openModal33" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPSM №40:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS2M №33:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №7:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-34) ============= -->
+<div id="openModal34" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №34:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №8:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-35) ============= -->
+<div id="openModal35" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №35:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №9:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-36) ============= -->
+<div id="openModal36" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №36:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №10:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-37) ============= -->
+<div id="openModal37" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №37:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №11:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-38) ============= -->
+<div id="openModal38" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №38:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №12:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-39) ============= -->
+<div id="openModal39" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №39:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №13:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-40) ============= -->
+<div id="openModal40" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №40:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS3M №14:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-41) ============= -->
+<div id="openModal41" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №41:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №15:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №1:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-42) ============= -->
+<div id="openModal42" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №42:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №16:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №2:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-43) ============= -->
+<div id="openModal43" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №43:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №17:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №3:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-44) ============= -->
+<div id="openModal44" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №44:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №18:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №4:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-45) ============= -->
+<div id="openModal45" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №45:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №19:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №5:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-46) ============= -->
+<div id="openModal46" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №46:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №20:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №6:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-47) ============= -->
+<div id="openModal47" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №47:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №21:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №7:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-48) ============= -->
+<div id="openModal48" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №48:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №22:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №8:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-49) ============= -->
+<div id="openModal49" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №49:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №23:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №9:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-50) ============= -->
+<div id="openModal50" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №50:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №24:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №10:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-51) ============= -->
+<div id="openModal51" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №51:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №25:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №11:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-52) ============= -->
+<div id="openModal52" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №52:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №26:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №12:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-53) ============= -->
+<div id="openModal53" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №53:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №27:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №13:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-54) ============= -->
+<div id="openModal54" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №54:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №28:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №14:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-55) ============= -->
+<div id="openModal55" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №55:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №29:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №15:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-56) ============= -->
+<div id="openModal56" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №56:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №30:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №16:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+<!-- ============= ДОВІДКА (МОДАЛ-57) ============= -->
+<div id="openModal57" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">+</a>
+		<h2>Доповнення<br>Color Profi Metallic</h2>
+		<hr><p><b>CPS2M №57:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+		    <p><b>CPS3M №31:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p><hr>
+			<p><b>CPS4M №17:</b></br>0*00*00.00<br>0*00*00.00<br>0*00*00.00</p>
+	</div>
+</div>
+</div>
 </body>
 </html>
