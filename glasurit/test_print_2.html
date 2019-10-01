@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	    <style type="text/css">
+
+    #printable { display: none; }
+
+    @media print
+    {
+        #non-printable { display: none; }
+        #printable { display: block; }
+    }
+    </style>
+</head>
+<body>
+<!-- ************************************ -->
+<body>
+    <div id="non-printable">
+        Не друкувати мене
+    </div>
+
+    <div id="printable">
+        Версія для друку
+    </div>
+	<input type="button" value="Печать" onclick="print()"></input>
+</body>
+</body>
+</html>
