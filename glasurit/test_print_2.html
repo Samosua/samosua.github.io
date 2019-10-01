@@ -3,28 +3,80 @@
 <head>
     <meta charset="utf-8">
 	    <style type="text/css">
-
     #printable { display: none; }
-
     @media print
     {
         #non-printable { display: none; }
-        #printable { display: block; }
     }
     </style>
+	<script>
+        // схавает пустоту, элемент, или коллекцию элементов.
+        function CheckboxCollection (checkboxes) {
+            this.checkboxes = checkboxes ? "nodeType" in checkboxes ? [checkboxes] : Array.prototype.slice.call(checkboxes) : [];
+        }
+        // checkboxes = [ /* чекбокс1, чекбокс2, ..., чекбоксN */ ]; <--- массив элементов.
+        // вернёт собранные в массив значения отмеченных чекбоксов.
+        CheckboxCollection.prototype.collectValues = function () {
+            var i = this.checkboxes.length, buffer = [];
+            while (i--) {
+                if (this.checkboxes[i].checked) {
+                    buffer.push(this.checkboxes[i].value);
+                }
+            }
+        return buffer;
+        };
+    </script>
 </head>
 <body>
 <!-- ************************************ -->
-<body>
     <div id="non-printable">
         <p>Не друкувати мене</p><br>
-		<input type="button" value="Печать" onclick="print()"></input>
+        <p><input type="checkbox" name="cpsm" value="Update CPSM" id="cpsm">CPSM</p>
+        <p><input type="checkbox" name="cps2m" value="Update CPS2M" id="cps2m">CPS2M</p>
+<hr>
+		
+	<button id="clear">Очистить</button>
+    <input type="button" value="Печать" onclick="print()"></input>	
+		
+		
     </div>
 
-    <div id="printable">
-        <h1>Ваш шедевр готовий!</h1>
+
+<input id="output">
+
+<!-- ======================================= -->
+
+    <div>
+        <h1>Ваш шедевр готовий!!!!!!!!!!!!!!!!!!!</h1>
 		    <p>Ідейні міркування вищого порядку, а також сформована структура організації сприяє підготовки та реалізації моделі розвитку. Повсякденна практика показує, що зміцнення та розвиток структури тягне за собою процес впровадження і модернізації напрямків прогресивного розвитку. Товариші! початок щоденної роботи по формуванню позиції забезпечує широкому колу (фахівців) участь у формуванні істотних фінансових і адміністративних умов. З іншого боку початок повсякденної роботи по формуванню позиції тягне за собою процес впровадження і модернізації моделі розвитку.</p>
+			
     </div>
-</body>
+<!-- ======================================= -->
+<script>
+// коллекция чекбоксов.
+var myBoxes = new CheckboxCollection();
+
+// чекбоксы можно добавить так.
+myBoxes.checkboxes.push(document.getElementById("cpsm"));
+myBoxes.checkboxes.push(document.getElementById("cps2m"));
+
+// куда выводим.
+var output = document.getElementById("output");
+
+// клик по кнопке "очистить"
+document.getElementById("clear").onclick = function () {
+    output.value = "";
+};
+
+// функция вывода.
+function out () {
+    output.value = myBoxes.collectValues().join(", ");
+}
+
+// обработка изменения чекбоксов.
+for (var i = 0; i < myBoxes.checkboxes.length; i++) {
+    myBoxes.checkboxes[i].onchange = out;
+}
+</script>
 </body>
 </html>
