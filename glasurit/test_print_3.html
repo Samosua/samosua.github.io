@@ -1,27 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-    <meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 	    <style type="text/css">
     #printable { display: none; }
     @media print
     {
         #non-printable { display: none; }
     }
-	input {
-  font-size: 16px
-  padding: 10px
-  display: block
-  width: 300px
-  border: none
-  border-bottom: 1px solid #ccc
-  &:focus
-    outline: none
-	}
     </style>
 	<script>
-        // схавает пустоту, элемент, или коллекцию элементов.
-        function CheckboxCollection (checkboxes) {
+        function CheckboxCollection (checkboxes) {// схавает пустоту, элемент, или коллекцию элементов.
             this.checkboxes = checkboxes ? "nodeType" in checkboxes ? [checkboxes] : Array.prototype.slice.call(checkboxes) : [];
         }
         // checkboxes = [ /* чекбокс1, чекбокс2, ..., чекбоксN */ ]; <--- массив элементов.
@@ -38,55 +28,45 @@
     </script>
 </head>
 <body>
-<!-- ************************************ -->
+<!-- ================= НЕ ДРУКУЄТЬСЯ ================= -->
     <div id="non-printable">
-        <p>Не друкувати мене</p><br>
-        <p><input type="checkbox" name="cpsm" value="Update CPSM" id="cpsm">CPSM</p>
-        <p><input type="checkbox" name="cps2m" value="Update CPS2M" id="cps2m">CPS2M</p>
-
-		
-	<button id="clear">Очистить</button>
-    <input type="button" value="Печать" onclick="print()"></input>	
-		
-	<hr>	
+        <p>Не ДРУКУЄТЬСЯ!!!</p><br>
+        <p><input type="checkbox" value="Update CPSM №1" id="cpsm">CPSM
+        <input type="checkbox" value="Update CPS2M №2" id="cps2m">CPS2M
+		<input type="checkbox" value="Update CPS3M №3" id="cps3m">CPS3M
+        <input type="checkbox" value="Update CPS4M №4" id="cps4m">CPS4M</p>
+	    <p>
+		    <button id="clear">Очистить</button>
+			<input type="button" value="Печать" onclick="print()"></input>
+		</p>
+	    <hr>	
     </div>
-
-<textarea rows="10" cols="45" name="text" id="output"></textarea>
-<input class="com" >
-
-<!-- ======================================= -->
-
+<!-- ================== ДРУКУЄТЬСЯ ================== -->
     <div>
-        <h1>Ваш шедевр готовий!!!!!!!!!!!!!!!!!!!</h1>
-		    <p>Ідейні міркування вищого порядку, а також сформована структура організації сприяє підготовки та реалізації моделі розвитку.</p>
-			
+        <h1>ДРУКУЄТЬСЯ</h1>
+		    <p>Необхідно оновити доповнення для компанії</p>
+			<p><textarea rows="5" cols="100%" border="2" maxlength="50"></textarea></p>
+            <label>Необхідні доповнення</label>			
+		    <p><textarea rows="10" cols="100%" id="output" disabled="disabled"></textarea></p>	
     </div>
-<!-- ======================================= -->
+<!-- ================================================= -->
 <script>
-// коллекция чекбоксов.
-var myBoxes = new CheckboxCollection();
-
-// чекбоксы можно добавить так.
-myBoxes.checkboxes.push(document.getElementById("cpsm"));
-myBoxes.checkboxes.push(document.getElementById("cps2m"));
-
-// куда выводим.
-var output = document.getElementById("output");
-
-// клик по кнопке "очистить"
-document.getElementById("clear").onclick = function () {
-    output.value = "";
-};
-
-// функция вывода.
-function out () {
-    output.value = myBoxes.collectValues().join(", ");
-}
-
-// обработка изменения чекбоксов.
-for (var i = 0; i < myBoxes.checkboxes.length; i++) {
-    myBoxes.checkboxes[i].onchange = out;
-}
+    var myBoxes = new CheckboxCollection();// коллекция чекбоксов.
+    // чекбоксы можно добавить так.
+        myBoxes.checkboxes.push(document.getElementById("cps4m"));
+        myBoxes.checkboxes.push(document.getElementById("cps3m"));
+		myBoxes.checkboxes.push(document.getElementById("cps2m"));
+		myBoxes.checkboxes.push(document.getElementById("cpsm"));
+    var output = document.getElementById("output");// куда выводим.
+        document.getElementById("clear").onclick = function () {// клик по кнопке "очистить"
+            output.value = "";
+        };
+    function out () {// функция вывода.
+        output.value = myBoxes.collectValues().join(", ");
+    }
+    for (var i = 0; i < myBoxes.checkboxes.length; i++) {// обработка изменения чекбоксов.
+        myBoxes.checkboxes[i].onchange = out;
+    }
 </script>
 </body>
 </html>
