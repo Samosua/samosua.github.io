@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+   	 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 <!-- Без цього скрипту не працює завантаження даних -->
+	 
+	 <link href="style.css" rel="stylesheet" type="text/css">
+     <title>Color Profi System Update</title>
+  <style>
+.header{
+  margin: -64px;
+  padding: 22px 64px;
+  width: 100%;
+  height:80px;
+  background:#F00000;
+  position:fixed;
+  border-bottom: 2px solid #000000;
+}
+/* Navigation Menu - Background */
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed; /* ПРИВ'ЯЗКА ДО ПЕВНОГО МІСЦЯ НА ЕКРАНІ */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  
+  /* non-critical appearance styles */
+  list-style: none;
+  background: #757575; /* Фон бокового меню*/
+}
+/* Navigation Menu - List items */
+.nav-item {
+  /* non-critical appearance styles */
+  width: 200px;
+  /* border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB; */
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: 12px;
+   /*background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);  */
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  /* transition: color 0.2s, background 0.5s; */
+}
+
+.nav-item a:hover {
+  color: #fff;  /*Колір тексту при наведенні*/
+  background: #e0e0e0 /*linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%) */; /**/
+    border-bottom: 2px solid #3F51B5;
+} 
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white; /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  
+  /* non-critical apperance styles */
+  padding: 4em;
+ /* background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(221,241,249) 35%,rgb(160,216,239) 100%); Градієнт фона сторінки
+  background-size: 200%; */
+}
+
+/********** Nav Trigger *************/
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+@media screen and (min-width: 650px) { /* СТИЛІ ДО ШИРИНИ ЕКРАНУ 600рх*/
+  label[for="nav-trigger"] {
+    display:none;
+  }
+  .site-wrap {
+  left: 200px; /* Зсув від лівого краю всієї сторінки від бокової навігації */
+  border-left: 0.5px solid #EBEBEB;
+ /*  box-shadow: 0 0 5px 1px #aaa; */
+}
+}
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: 15px; top: 15px;
+  z-index: 2;
+  
+  /* non-critical apperance styles */
+  height: 26px; /* Висота бургера */
+  width: 26px; /* Ширина бургера */
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>"); /* Кнопка гамбургера */
+  background-size: contain; 
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+  transition: left 0.2s; /* Швидкість анімації зсуву нав-ції.*/
+}
+
+.nav-trigger:checked + label {
+  left: 215px; /* Відступ бургера зліва при відкритому меню*/
+}
+
+.nav-trigger:checked ~ .site-wrap {
+  left: 200px; /* Зсув від лівого краю всієї сторінки від бокової навігації */
+  border-left: 0.5px solid #EBEBEB;
+ /*  box-shadow: 0 0 5px 1px #aaa; */
+}
+********************************************************
+body {
+	/* Without this, the body has excess horizontal scroll when the menu is open 
+  overflow-x: hidden;*/
+}
+
+/* Additional non-critical styles */
+
+h1, h3, p {
+  max-width: 600px;
+  margin: 0 auto 1em;
+}
+/* Micro reset */
+*,*:before,*:after{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif; }
+
+</style>	 
+  </head>
+  <body class="">
+<!-- ============== -->
+<ul class="navigation" style="color:black">
+	<li class="nav-item"><a href="#">Feyco 0001</a></li>
+	<li class="nav-item"><a href="#">Feyco 0002</a></li>
+	<li class="nav-item"><a href="#">Feyco 0003</a></li>
+	<li class="nav-item"><a href="#">Feyco 0004</a></li>
+	<li class="nav-item"><a href="#">Feyco 0005</a></li>
+  <li class="nav-item"><a href="#">Feyco 0006</a></li>
+</ul>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger"></label>
+
+<div class="site-wrap">
+<!-- ==== HEADER ==== 
+<div class="header"><a href="#"><img width="200px" style="max-width:340px" src="https://samosua.github.io/feyco_logo.png" alt="альтернативный текст" /></a></div>
+ ======== -->
+  <br><br><br><br>
+  <h1>Pure CSS Off-Screen Menu</h1>
+  <h3>Finally, an off-screen menu that doesn't require a bunch of Javascript to work. </h3>
+  
+  <p>This concept relies on the <code>:checked</code> pseudo-selector as well as the general sibling <code>~</code> selector, so it has decent browser support.</p>
+ 
+  <p>Sint, perspiciatis nemo aut, rerum excepturi deleniti modi quos nihil corporis eum, maiores soluta labore, consectetur eligendi nesciunt. Placeat, incidunt! Illum placeat eligendi, veritatis consectetur eum! Dolor obcaecati minima ab placeat voluptatem neque modi doloribus, magnam qui voluptate eaque in. Nulla expedita hic porro architecto facere officiis vitae numquam, dolor!</p>
+  <p>Perferendis quis ea incidunt ducimus nisi voluptate natus. Repellat asperiores quod rerum rem quos blanditiis enim modi, veniam voluptas a facilis! Velit cum omnis, voluptatum eum inventore! Corrupti, suscipit, neque distinctio expedita est laboriosam cum aliquid minus tempora quaerat officia possimus unde vel deleniti eaque fugit accusamus iusto dolorum natus.</p>
+  
+<!--  <p>Demo by Austin Wulf. <a href="http://www.sitepoint.com/pure-css-off-screen-navigation-menu">See article</a>.</p> -->
+</div>
+<h1>Test</h1>
+  </body>
+</html>
